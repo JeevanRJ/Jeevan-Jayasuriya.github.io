@@ -17,10 +17,10 @@ main:
     url: /publications/
 
   - title: "Teaching and Mentorship"
-    url: /talks/    
+    url: /teaching/  
 
   - title: "Activities"
-    url: /teaching/ 
+    url: /talks/   
 
   #- title: "Portfolio"
     #url: /portfolio/
