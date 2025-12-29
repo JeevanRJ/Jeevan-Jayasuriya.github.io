@@ -1,5 +1,5 @@
 ---
-title: "Firefighter motion capture data set and biomechanical analysis of task-specific gear effects and loading asymmetries"
+title: "Firefighter motion capture data set and biomechanical analysis of task-specific gear effects and loading asymmetries "
 collection: publications
 category: manuscripts
 permalink: /publication/2009-10-01-paper-title-number-1
