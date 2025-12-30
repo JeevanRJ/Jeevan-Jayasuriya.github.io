@@ -6,8 +6,22 @@ author_profile: true
 ---
 
 
-My research focuses on analyzing multimodal physiological and behavioral data to understand how human sensorimotor control and performance vary under challenging conditions such as space travel and firefighting, as well as during human–machine interactions where system design and autonomy influence human behavior. 
+Undergraduate Teaching at [University of Sri Jayewardenepura](https://science.sjp.ac.lk/phy/jajr/) 
 
-To achieve this, I integrate insights from brain imaging, movement kinematics, eye gaze, muscle activation, heart rate, and subjective perception, together with musculoskeletal analysis and data-driven methods including statistics, machine learning, and deep learning–based temporal models, to capture neural, biomechanical, and perceptual markers of human state. 
+  - EES 209 1.0 Computer Integrated Control Systems 
+  - ASP 483 2.0 Advanced Programmable Logic Controllers 
+  - EES 311 1.0 Mobile Application Development 
+  - EES 202 1.0 Data Communication Techniques 
+  - EES 205 1.0 Object Oriented Programming for Embedded Systems 
+  - PHY 311 1.0 Introduction to Computer Hardware 
+  - EES 212 1.0 Embedded Systems Mini Challenge 
+  - PHY 101 1.0 Fundamental of Electronics 
+  - EES 305 1.0 IoT and Robotics Lab 
 
-The overarching goal of my research is to translate these data-driven insights into the design and control of human–machine systems that jointly optimize human performance, system effectiveness, and safety. 
+ 
+
+Undergraduate research mentorship at [University of Wisconsin- Madison](https://www.wisc.edu/)
+
+  - Adam Easton, Undergraduate Researcher, October 2024 – May 2025 
+  - Aaron Lai, Undergraduate Researcher, January 2025 – August 2025 
+  - Rithik Gobinath, Undergraduate Researcher, September 2025 – Now 
