@@ -17,11 +17,11 @@ statistics, machine learning, and deep learning–based temporal models.
 
 ---
 
-{% include research/gvs_balance.md %}
+{% include research/research1.md %}
 
 ---
 
-{% include research/firefighter_biomechanics.md %}
+{% include research/research2.md %}
 
 
 
