@@ -6,22 +6,34 @@
     </div>
   </div>
 
-  <h2 class="archive__item-title" style="text-align:center; margin-top:0;">
-    {{ post.title }}
-  </h2>
+  <div style="display:flex; gap:32px; align-items:center; justify-content:center; margin: 0 auto; max-width: 1100px; flex-wrap: wrap;">
 
-  {% if post.excerpt %}
-    <p class="archive__item-excerpt" style="max-width: 900px; margin: 0.75em auto 1.25em auto;">
-      {{ post.excerpt }}
-    </p>
-  {% endif %}
+    {% if post.header.teaser %}
+      <div style="flex: 0 0 52%; max-width: 52%; min-width: 320px;">
+        <img src="{{ base_path }}{{ post.header.teaser }}"
+             style="width: 100%; height: auto; border-radius: 8px;" />
+      </div>
+    {% endif %}
 
-  {% if post.header.teaser %}
-    <div style="text-align:center; margin: 1.25em 0 2.0em 0;">
-      <img src="{{ base_path }}{{ post.header.teaser }}"
-           style="max-width: 950px; width: 100%; height: auto; border-radius: 8px;" />
+    <div style="flex: 1; min-width: 280px;">
+      <h2 class="archive__item-title" style="margin: 0 0 0.5em 0;">
+        {{ post.title }}
+      </h2>
+
+      {% if post.content %}
+        <div style="font-size: 1.05em; line-height: 1.7;">
+          {{ post.content | markdownify }}
+        </div>
+      {% endif %}
+
+      {% if post.location %}
+        <div style="margin-top: 0.8em; opacity: 0.85;">
+          <strong>Location:</strong> {{ post.location }}
+        </div>
+      {% endif %}
     </div>
-  {% endif %}
+
+  </div>
 
   <hr style="margin: 2.0em 0;">
 </div>
