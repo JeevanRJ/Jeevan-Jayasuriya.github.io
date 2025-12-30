@@ -87,11 +87,11 @@
   // set width only, for non-square avatars
   // height: 36px;
 
-  @include breakpoint($large) {
-    display: block;
-    width: auto;
-    height: auto;
-  }
+ // @include breakpoint($large) {
+ //   display: block;
+//    width: auto;
+//    height: auto;
+//  }
 
  // img {
  //   max-width: 175px;
@@ -118,7 +118,7 @@
 }
 
   }
-}
+//}
 
 .author__content {
   display: table-cell;
