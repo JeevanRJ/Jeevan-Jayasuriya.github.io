@@ -8,3 +8,6 @@ date: 2025-01-01
 paperurl: ""
 ---
 
+**Status:** Just accepted at *Ergonomics*
+
+**Authors:** Jayasuriya, J., Bazzocchi, M. C. F., Fite, K., & Martinez, M.
