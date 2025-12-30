@@ -1,22 +1,22 @@
 ---
-title: "Teaching and Mentorship"
+title: "Teaching experience 2"
 collection: teaching
-type: "Undergraduate course"
+type: "Workshop"
 permalink: /teaching/2014-spring-teaching-1
-venue: "University of Sri Jayewardenepura"
-date: 2014-01-01
-location: "Sri Lanka"
+venue: "University 1, Department...111111"
+date: 2015-01-01
+location: "City, Country"
 ---
 
-## Undergraduate Teaching at [University of Sri Jayewardenepura](https://science.sjp.ac.lk/phy/jajr/)
+This is a description of a teaching experience. You can use markdown like any other post.
 
-- **EES 209 (1.0)** — Computer Integrated Control Systems  
-- **ASP 483 (2.0)** — Advanced Programmable Logic Controllers  
-- **EES 311 (1.0)** — Mobile Application Development  
-- **EES 202 (1.0)** — Data Communication Techniques  
-- **EES 205 (1.0)** — Object Oriented Programming for Embedded Systems  
-- **PHY 311 (1.0)** — Introduction to Computer Hardware  
-- **EES 212 (1.0)** — Embedded Systems Mini Challenge  
-- **PHY 101 (1.0)** — Fundamental of Electronics  
-- **EES 305 (1.0)** — IoT and Robotics Lab
+Heading 1
+======
+;;;;;;;;;;;;;;;;;
+Heading 2
+======
+bbbbbbbbbbbbbb
+Heading 3
+======
+
 
