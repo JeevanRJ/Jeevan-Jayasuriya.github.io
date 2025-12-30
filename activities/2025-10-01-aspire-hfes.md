@@ -2,7 +2,7 @@
 title: "ASPIRE HFES 2025"
 collection: activities
 type: "Conference presentation"
-permalink: /activities/aspire-hfes-2025
+permalink: /activities/2025-10-01-aspire-hfes
 venue: "HFES Annual Meeting (ASPIRE)"
 date: 2025-10-01
 location: "Chicago, IL"
