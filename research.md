@@ -1,28 +1,13 @@
 ---
 layout: archive
-title: "Research"
+title: "Research Overview"
 permalink: /research/
 author_profile: true
 ---
-## Research Interests
-- Human factors and ergonomics  
-- Fatigue and shift work  
-- Wearable sensors and HRV  
 
-## Current Research
-**Pulse Rate Variability from Wearable Devices**  
-- Evaluating PRV as a surrogate for HRV  
-- Focus on accuracy during fatigue and shift work  
 
-**Motion Capture and Biomechanics**
-- Task-specific gear effects  
-- Loading asymmetries in operational settings  
+My research focuses on analyzing multimodal physiological and behavioral data to understand how human sensorimotor control and performance vary under challenging conditions such as space travel and firefighting, as well as during human–machine interactions where system design and autonomy influence human behavior. 
 
-## Methods & Tools
-- Wearable sensors (ECG, wrist-worn devices)
-- Motion capture systems
-- Statistical analysis (Python, R)
+To achieve this, I integrate insights from brain imaging, movement kinematics, eye gaze, muscle activation, heart rate, and subjective perception, together with musculoskeletal analysis and data-driven methods including statistics, machine learning, and deep learning–based temporal models, to capture neural, biomechanical, and perceptual markers of human state. 
 
-## Collaborations
-- University of Wisconsin–Madison
-- Human Factors & Ergonomics Lab
+The overarching goal of my research is to translate these data-driven insights into the design and control of human–machine systems that jointly optimize human performance, system effectiveness, and safety. 
