@@ -1,0 +1,25 @@
+<div class="archive__item">
+  <div style="text-align:center; margin: 2.0em 0 0.75em 0;">
+    <div style="font-size: 1.15em; font-weight: 700;">
+      🗓️ {{ post.date | date: "%B %Y" }}
+    </div>
+  </div>
+
+  <h2 class="archive__item-title" style="text-align:center; margin-top:0;">
+    <a href="{{ base_path }}{{ post.url }}">{{ post.title }}</a>
+  </h2>
+
+  {% if post.excerpt %}
+    <p class="archive__item-excerpt" style="max-width: 900px; margin: 0.75em auto 1.25em auto;">
+      {{ post.excerpt }}
+    </p>
+  {% endif %}
+
+  {% if post.header.teaser %}
+    <div style="text-align:center; margin: 1.25em 0 2.0em 0;">
+      <img src="{{ base_path }}{{ post.header.teaser }}" style="max-width: 950px; width: 100%; height: auto; border-radius: 8px;" />
+    </div>
+  {% endif %}
+
+  <hr style="margin: 2.0em 0;">
+</div>
