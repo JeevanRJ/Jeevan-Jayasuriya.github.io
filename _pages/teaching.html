@@ -7,20 +7,6 @@ author_profile: true
 
 {% include base_path %}
 
-## Undergraduate Teaching  
-[University of Sri Jayewardenepura](https://science.sjp.ac.lk/phy/jajr/)
-
-- **Role:** Lecturer / Instructor  
-- **Location:** Sri Lanka  
-
-**Courses Taught**
-
-- **EES 209** — Computer Integrated Control Systems  
-- **ASP 483** — Advanced Programmable Logic Controllers  
-- **EES 311** — Mobile Application Development  
-- **EES 202** — Data Communication Techniques  
-- **EES 205** — Object Oriented Programming for Embedded Systems  
-- **PHY 311** — Introduction to Computer Hardware  
-- **EES 212** — Embedded Systems Mini Challenge  
-- **PHY 101** — Fundamentals of Electronics  
-- **EES 305** — IoT and Robotics Lab
+{% for post in site.teaching reversed %}
+  {% include archive-single.html %}
+{% endfor %}
