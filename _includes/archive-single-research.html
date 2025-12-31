@@ -2,66 +2,75 @@
 
 {% assign media_width = "240px" %}
 
+{%- assign has_media = false -%}
+{%- if post.video_url or post.slides_embed or post.header.teaser -%}
+  {%- assign has_media = true -%}
+{%- endif -%}
+
 <div class="archive__item" style="margin-bottom: 2.5em;">
 
-  <!-- Two-column responsive layout (NO DATE here) -->
   <div style="
     display: flex;
     gap: 32px;
     align-items: flex-start;
-    justify-content: flex-start;   /* FIX: was center */
-    margin: 0 auto;                /* keep container centered */
+    justify-content: flex-start;
+    margin: 0 auto;
     max-width: 1100px;
     flex-wrap: wrap;
   ">
 
-    <!-- MEDIA (video OR slides OR image) -->
-    <div style="flex: 0 0 {{ media_width }}; max-width: {{ media_width }};">
+    {%- if has_media -%}
+      <!-- MEDIA (only shown when media exists) -->
+      <div style="flex: 0 0 {{ media_width }}; max-width: {{ media_width }};">
 
-      {%- if post.video_url -%}
+        {%- if post.video_url -%}
 
-        {%- if post.video_url contains 'youtube' or post.video_url contains 'vimeo' -%}
+          {%- if post.video_url contains 'youtube' or post.video_url contains 'vimeo' -%}
+            <iframe
+              src="{{ post.video_url }}"
+              style="width: {{ media_width }}; height: 160px; border-radius: 8px;"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          {%- else -%}
+            <video controls style="width: {{ media_width }}; border-radius: 8px;">
+              <source src="{{ base_path }}{{ post.video_url }}" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          {%- endif -%}
+
+        {%- elsif post.slides_embed -%}
+
           <iframe
-            src="{{ post.video_url }}"
-            style="width: {{ media_width }}; height: 160px; border-radius: 8px;"
-            frameborder="0"
+            src="{{ post.slides_embed }}"
+            style="
+              width: 100%;
+              max-width: 360px;
+              height: 220px;
+              border: 1px solid #ddd;
+              border-radius: 8px;
+            "
             allowfullscreen>
           </iframe>
-        {%- else -%}
-          <video controls style="width: {{ media_width }}; border-radius: 8px;">
-            <source src="{{ base_path }}{{ post.video_url }}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+
+        {%- elsif post.header.teaser -%}
+
+          <img
+            src="{{ base_path }}{{ post.header.teaser }}"
+            style="width: {{ media_width }}; height: auto; border-radius: 8px;"
+            alt="Research image" />
+
         {%- endif -%}
 
-      {%- elsif post.slides_embed -%}
+      </div>
+    {%- endif -%}
 
-        <!-- Embedded slides -->
-        <iframe
-          src="{{ post.slides_embed }}"
-          style="
-            width: 100%;
-            max-width: 360px;
-            height: 220px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-          "
-          allowfullscreen>
-        </iframe>
-
-      {%- elsif post.header.teaser -%}
-
-        <img
-          src="{{ base_path }}{{ post.header.teaser }}"
-          style="width: {{ media_width }}; height: auto; border-radius: 8px;"
-          alt="Research image" />
-
-      {%- endif -%}
-
-    </div>
-
-    <!-- TEXT (title + full content) -->
-    <div style="flex: 1; min-width: 320px; max-width: 760px;">
+    <!-- TEXT -->
+    <div style="
+      flex: 1;
+      min-width: 320px;
+      max-width: {% if has_media %}760px{% else %}1100px{% endif %};
+    ">
 
       <h2 style="margin: 0 0 0.6em 0; font-weight: 800; text-align: left;">
         {{ post.title }}
