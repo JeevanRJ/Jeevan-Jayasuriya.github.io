@@ -1,8 +1,8 @@
 ---
 title: "ASPIRE HFES 2024"
 collection: activities
-location: "Chicago, IL"
-date: 2025-10-01
+location: "Chicago, Arizona"
+date: 2024-10-01
 header:
   teaser: /images/activities/aspire_hfes_2025.png
 ---
