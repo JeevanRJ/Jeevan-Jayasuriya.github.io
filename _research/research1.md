@@ -34,3 +34,11 @@ Slide5.png (see slide 5 / left side image in a gif./ ideal to insert as a gif)
 We have found interesting physiological behaviors in brain activations and other physiological data under the interactive effect of altered gravity and fatigue, and the journal publications are under preparation.  
 
 Slide6.png 
+
+Assistive Technologies for Planetary Surface Exploration 
+
+Post-landing sensorimotor impairment remains a major operational risk for astronauts during planetary surface exploration, particularly when immediate external mobility support may not be available. Can we predict gait instabilities ahead of time so that assistive devices can alert the user early giving them extra bit of time to react and exoskeletons can safely shift to fall prevention modes smoothly?  
+
+Slide7.png 
+
+In this work, we trained a temporal convolutional network (TCN) to forecast instability 0.1–1.0 s into the future using margin of stability, muscle activations, and kinematics.   
