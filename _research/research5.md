@@ -1,5 +1,5 @@
 ---
-title: "Research on human spaceflight optimization "
+title: "Research on human spaceflight optimization"
 collection: research
 header:
   teaser: /images/activities/aspire_hfes_2025.png
