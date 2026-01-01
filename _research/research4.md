@@ -70,10 +70,15 @@ Actuators were selected to match the biomechanical demands of firefighter activi
 <img src="{{ site.baseurl }}/images/Slide17.PNG"
      alt="Research figure"
      style="width: 700px; max-width: 100%; display: block; margin: 1.5em auto;">
+
+<img src="{{ site.baseurl }}/images/Slide18.png"
+     alt="Zero Interaction Force Controller"
+     style="width: 700px; max-width: 100%; display: block; margin: 2em auto;">
+
      
-<img src="{{ site.baseurl }}/images/Slide18.PNG"
+<!-- <img src="{{ site.baseurl }}/images/Slide18.PNG"
      alt="Research figure"
-     style="width: 100px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 100px; max-width: 100%; display: block; margin: 1.5em auto;"> -->
      
 <img src="{{ site.baseurl }}/images/Slide19.PNG"
      alt="Research figure"
