@@ -1,6 +1,7 @@
 ---
+title: "Research on spaceflight human optimization"
 collection: research
-permalink: /research/spaceflight-human-optimization/
+permalink: /research/research5/
 ---
 ## Research on spaceflight human optimization
 
