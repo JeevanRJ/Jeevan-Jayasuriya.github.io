@@ -10,7 +10,7 @@ author_profile: true
 ## Contents
 
 - [Research Overview](#research-overview)
-- [Research on spaceflight human optimization](#research-on-spaceflight-human-optimization)
+- [Research on Spaceflight Human Optimization]({{ site.baseurl }}/research/spaceflight-human-optimization/)
   - [Multiple Spaceflight Hazards](#multiple-spaceflight-hazards)
   - [Data Collection and Synchronization](#data-collection-and-synchronization)
   - [Simulating Altered Gravity](#simulating-altered-gravity)
