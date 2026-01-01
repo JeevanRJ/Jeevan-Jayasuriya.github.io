@@ -20,20 +20,20 @@ To address this question, we conducted human-subject experiments while collectin
 Multimodal data streams were synchronized using Lab Streaming Layer (LSL). Devices were wirelessly networked to dedicated acquisition systems, with automated error-checking implemented to support robust, high-fidelity data collection. 
 <img src="{{ site.baseurl }}/images/Slide2.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 
 **Simulating Altered Gravity**
 
 Post-landing effects associated with altered gravity were recreated in the laboratory using Galvanic Vestibular Stimulation (GVS). A small, controlled electrical current (up to 2 mA) was applied across the mastoid processes, generating an electric field that perturbs vestibular afferent signaling. This stimulation effectively disrupts vestibular input to the brain, allowing controlled investigation of balance and sensorimotor responses under altered gravity–like conditions. 
 <img src="{{ site.baseurl }}/images/Slide3.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 **Sensorimotor test battery**
 
 Participants completed a sensorimotor test battery consisting of 13 activities under the combined effects of GVS and fatigue.
 <img src="{{ site.baseurl }}/images/Slide4.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 
 **Fatigue Manipulation and Assessment**
 
@@ -41,7 +41,7 @@ Mental fatigue, representing work overload, was induced using a two-back task th
 In addition to multimodal physiological measurements, fatigue was assessed using the Psychomotor Vigilance Test (PVT), Karolinska Sleepiness Scale (KSS), and Profile of Mood States (POMS).
 <img src="{{ site.baseurl }}/images/Slide5.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 **Slide5.png (see slide 5 / left side image in a gif./ ideal to insert as a gif)**
 
 **Key Findings and Ongoing Work**
@@ -49,14 +49,14 @@ In addition to multimodal physiological measurements, fatigue was assessed using
 Our analyses revealed distinct physiological responses in brain activation and other physiological measures under the interactive effects of altered gravity and fatigue. Related journal publications are currently in preparation. 
 <img src="{{ site.baseurl }}/images/Slide6.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 
 **Assistive Technologies for Planetary Surface Exploration** 
 
 Post-landing sensorimotor impairment remains a major operational risk for astronauts during planetary surface exploration, particularly when immediate external mobility support may be limited. Can gait instabilities be predicted in advance, enabling assistive systems to provide early warnings and allowing exoskeletons to transition smoothly into fall-prevention modes?  
 <img src="{{ site.baseurl }}/images/Slide7.PNG"
      alt="Research figure"
-     style="width: 400px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
 
 In this work, we trained a Temporal Convolutional Network (TCN) to forecast gait instability 0.1–1.0 s into the future using margin of stability, muscle activation, and kinematic data. 
 
@@ -69,7 +69,7 @@ In this work, we trained a Temporal Convolutional Network (TCN) to forecast gait
   </iframe>
 </div> --> 
 
-<div style="max-width: 400px; margin: 2em auto;">
+<div style="max-width: 700px; margin: 2em auto;">
   <iframe
     src="https://www.youtube.com/embed/3paX5J4QHCg"
     style="width: 100%; aspect-ratio: 16 / 9;"
