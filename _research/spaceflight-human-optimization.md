@@ -1,8 +1,8 @@
 ---
-title: "Research on spaceflight human optimization"
 collection: research
 permalink: /research/spaceflight-human-optimization/
 ---
+## Research on spaceflight human optimization
 
 ### Multiple Spaceflight Hazards
 
