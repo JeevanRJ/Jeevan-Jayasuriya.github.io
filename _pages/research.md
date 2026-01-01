@@ -18,11 +18,14 @@ author_profile: true
   - [Fatigue Manipulation and Assessment](#fatigue-manipulation-and-assessment)
   - [Key Findings and Ongoing Work](#key-findings-and-ongoing-work)
   - [Assistive Technologies for Planetary Surface Exploration](#assistive-technologies-for-planetary-surface-exploration)
+
 - [Research on Firefighter Assistive Devices](#research-on-firefighter-assistive-devices)
-  -[Can a firefighter exoskeleton help?](#can-a-firefighter-exoskeleton-help?)
-  -[Closed-Loop Human–Machine Interfaces](#closed-loop-human–machine-interfaces)
-  -[Hardware and Control Architecture](#hardware-and-control-architecture)
+  - [Can a firefighter exoskeleton help?](#can-a-firefighter-exoskeleton-help?)
+  - [Closed-Loop Human–Machine Interfaces](#closed-loop-human–machine-interfaces)
+  - [Hardware and Control Architecture](#hardware-and-control-architecture)
+
 - [Fire safety in coal yards](#fire-safety-in-coal-yards)
+  
 - [Other undergraduate research](#other-undergraduate-research)
   - [Obstacle navigation in mobile robotics](#obstacle-navigation-in-mobile-robotics)
   - [Machine Vision based system for Grain Classification](#machine-vision-based-system-for-grain-classification)
