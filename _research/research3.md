@@ -20,5 +20,5 @@ Our [project](https://link.springer.com/article/10.1007/s40789-022-00488-y) expl
      
 <img src="{{ site.baseurl }}/images/Slide24.PNG"
      alt="Research figure"
-     style="width: 500px; max-width: 100%; display: block; margin: 1.5em auto;">
+     style="width: 600px; max-width: 100%; display: block; margin: 1.5em auto;">
 
