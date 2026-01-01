@@ -1,11 +1,12 @@
 ---
+title: "Research on spaceflight human optimization"
 collection: research
 permalink: /research/spaceflight-human-optimization/
 ---
 
 ## Research on spaceflight human optimization
 ### Multiple Spaceflight Hazards
-<!--title: "Research on spaceflight human optimization"-->
+
 Sensorimotor function has been critical to mission success in past space missions and will be even more essential for future long-duration missions to Mars and beyond, where real-time ground support will be limited. During spaceflight, astronauts are exposed to multiple hazards, including altered gravity and fatigue arising from high workload and sleep deprivation.
 
 Do these stressors jointly impair sensorimotor function, or can humans adapt to sustain performance under such challenging conditions?
