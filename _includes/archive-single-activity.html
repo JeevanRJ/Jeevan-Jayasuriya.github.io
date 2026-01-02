@@ -1,23 +1,39 @@
-<div class="archive__item">
+{% include base_path %}
+
+<div class="archive__item" style="margin-bottom: 2.5em;">
+
+  <!-- Date (Month Year + optional location) -->
   <div style="text-align:center; margin: 2.0em 0 0.75em 0;">
     <div style="font-size: 1.15em; font-weight: 700;">
       🗓️ {{ post.date | date: "%B %Y" }}
+      {% if post.location %}
+        : 📍 {{ post.location }}
+      {% endif %}
     </div>
   </div>
 
+  <!-- Title -->
   <h2 class="archive__item-title" style="text-align:center; margin-top:0;">
     {{ post.title }}
   </h2>
 
+  <!-- Text: prefer excerpt if you set it, else show full content -->
   {% if post.excerpt %}
-    <p class="archive__item-excerpt" style="max-width: 900px; margin: 0.75em auto 1.25em auto;">
-      {{ post.excerpt }}
-    </p>
+    <div class="archive__item-excerpt" style="max-width: 900px; margin: 0.75em auto 1.25em auto; line-height: 1.7;">
+      {{ post.excerpt | markdownify }}
+    </div>
+  {% elsif post.content %}
+    <div style="max-width: 900px; margin: 0.75em auto 1.25em auto; line-height: 1.7;">
+      {{ post.content | markdownify }}
+    </div>
   {% endif %}
 
+  <!-- Optional image teaser -->
   {% if post.header.teaser %}
     <div style="text-align:center; margin: 1.25em 0 2.0em 0;">
-      <img src="{{ base_path }}{{ post.header.teaser }}" style="max-width: 950px; width: 100%; height: auto; border-radius: 8px;" />
+      <img src="{{ base_path }}{{ post.header.teaser }}"
+           style="max-width: 950px; width: 100%; height: auto; border-radius: 8px;"
+           alt="Activity image" />
     </div>
   {% endif %}
 
