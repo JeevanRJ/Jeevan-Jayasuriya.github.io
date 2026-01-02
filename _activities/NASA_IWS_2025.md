@@ -9,7 +9,7 @@ Fall 2024: Initiated data collection for the first phase of a collaborative proj
 <div style="max-width: 600px; margin: 2em auto;">
   <iframe
     src="https://drive.google.com/file/d/1ydnnEEIcMX7ygYbTws5lkqc0uA0rqUgw/preview"
-    style="width: 100%; height: 400px; border: none;"
+    style="width: 100%; height: 500px; border: none;"
     allowfullscreen>
   </iframe>
 </div>
