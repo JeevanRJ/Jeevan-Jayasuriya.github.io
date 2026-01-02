@@ -14,17 +14,19 @@ Our project received the [Best Student Work Award](https://www.linkedin.com/post
 
 <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
 
+  <!-- Presentation 1 -->
   <div style="max-width: 400px; width: 100%;">
     <iframe 
-      src="https://docs.google.com/presentation/d/e/2PACX-1vRklZWMOaeHsSLN8tsDoFwaFSy66f9A-RQMo_onVW7SxIGkiNcKibIyjLOr6u3r2w/pubembed?start=false&loop=true&delayms=3000"
+      src="https://docs.google.com/presentation/d/e/2PACX-1vR_JUHrePqcQnRrta_iIHXpmT9fe7AtvPUA4Ccl8i7gzEEo__5uwXSTkdoPkAiWfQ/pubembed?start=false&loop=true&delayms=3000"
       style="width: 100%; height: 400px; border: none;"
       allowfullscreen>
     </iframe>
   </div>
 
+  <!-- Presentation 2 -->
   <div style="max-width: 400px; width: 100%;">
     <iframe 
-      src="https://docs.google.com/presentation/d/e/2PACX-1vRklZWMOaeHsSLN8tsDoFwaFSy66f9A-RQMo_onVW7SxIGkiNcKibIyjLOr6u3r2w/pubembed?start=false&loop=true&delayms=3000"
+      src="https://docs.google.com/presentation/d/e/2PACX-1vR5mdQdzsFyFe0PTORhrB9_uw-BB23Nyr1iwDuch1V-ANN8Lit8dsBHpk1WxwVZXA/pubembed?start=false&loop=true&delayms=3000"
       style="width: 100%; height: 400px; border: none;"
       allowfullscreen>
     </iframe>
