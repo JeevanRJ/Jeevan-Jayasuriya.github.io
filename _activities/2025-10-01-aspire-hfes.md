@@ -16,8 +16,12 @@ Our project received the [Best Student Work Award](https://hfes-aerospace.org/20
 
 <div style="max-width: 900px; margin: 2em auto;">
   <iframe 
-    src="https://uwprod-my.sharepoint.com/personal/jayasuriyaar_wisc_edu/_layouts/15/Doc.aspx?sourcedoc={6b7a1e91-6e41-45f8-80ab-65c16a8db837}&action=embedview&wdAr=1.7777777777777777"
-    style="width: 100%; height: 600px; border: none;">
+    src="https://docs.google.com/presentation/d/e/2PACX-1vRklZWMOaeHsSLN8tsDoFwaFSy66f9A-RQMo_onVW7SxIGkiNcKibIyjLOr6u3r2w/pubembed?start=false&loop=true&delayms=3000"
+    style="width: 100%; height: 600px; border: none;"
+    allowfullscreen="true" 
+    mozallowfullscreen="true" 
+    webkitallowfullscreen="true">
   </iframe>
 </div>
+
 
