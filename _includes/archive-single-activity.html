@@ -5,8 +5,8 @@
 <div class="archive__item" style="margin-bottom: 2.5em;">
 
   <!-- Date (Month Year) -->
-  <div style="text-align:center; margin: 2.0em 0 0.75em 0;">
-    <div style="font-size: 1.15em; font-weight: 700;">
+  <div style="text-align:left; margin: 1.2em 0 0.75em 0;">
+    <div style="font-size: 1.05em; font-weight: 700;">
       🗓️ {{ post.date | date: "%B %Y" }}
       {% if post.location %}
         : 📍 {{ post.location }}
@@ -17,11 +17,11 @@
   <!-- Two-column responsive layout -->
   <div style="
     display:flex;
-    gap:32px;
+    gap:24px;
     align-items:flex-start;
-    justify-content:center;
-    margin: 0 auto;
-    max-width: 1100px;
+    justify-content:flex-start;   /* IMPORTANT: don't center */
+    width:100%;                  /* IMPORTANT: use full width */
+    max-width:100%;              /* IMPORTANT: don't cap at 1100px */
     flex-wrap: wrap;
   ">
 
@@ -44,34 +44,17 @@
 
       {%- elsif post.slides_embed -%}
 
-  <iframe
-    src="{{ post.slides_embed }}"
-    style="
-      width: 100%;
-      max-width: 360px;
-      height: 220px;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-    "
-    allowfullscreen>
-  </iframe>
-
-        {%- if post.header.teaser -%}
-          <a href="{{ post.slides_url | relative_url }}"
-             target="_blank"
-             rel="noopener noreferrer"
-             style="text-decoration:none;">
-            <img src="{{ base_path }}{{ post.header.teaser }}"
-                 style="width: {{ media_width }}; height: auto; border-radius: 8px; cursor: pointer;"
-                 alt="Slides thumbnail" />
-          </a>
-        {%- else -%}
-          <a href="{{ post.slides_url | relative_url }}"
-             target="_blank"
-             rel="noopener noreferrer">
-            Open slides
-          </a>
-        {%- endif -%}
+        <iframe
+          src="{{ post.slides_embed }}"
+          style="
+            width: {{ media_width }};
+            height: 220px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+          "
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
 
       {%- elsif post.header.teaser -%}
 
@@ -84,9 +67,9 @@
     </div>
 
     <!-- TEXT (title + full content) -->
-    <div style="flex: 1; min-width: 320px; max-width: 760px;">
+    <div style="flex: 1; min-width: 320px; max-width: 900px;">
 
-      <h2 style="margin: 0 0 0.6em 0; font-weight: 800; text-align: center;">
+      <h2 style="margin: 0 0 0.6em 0; font-weight: 800; text-align: left;">
         {{ post.title }}
       </h2>
 
@@ -100,6 +83,9 @@
 
   </div>
 
+  <hr style="margin: 2.0em 0;">
+
+</div>
   <hr style="margin: 2.0em 0;">
 
 </div>
