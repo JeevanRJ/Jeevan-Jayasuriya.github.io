@@ -3,8 +3,6 @@ title: "ASPIRE HFES 2025"
 collection: activities
 location: "Chicago, IL"
 date: 2025-10-01
-header:
-  teaser: /images/activities/aspire_hfes_2025.png
 ---
 Presented two of our recent works at the HFES 2025 event held in Chicago!
 
@@ -14,7 +12,7 @@ Coexisting spaceflight hazards such as vestibular impairments and mental fatigue
 
 Our project received the [Best Student Work Award](https://hfes-aerospace.org/2025/11/04/aspire-25-highlights/) in the HFES Aerospace Systems Technical Group (ASTG) this year.
 
-<div style="max-width: 900px; margin: 2em auto;">
+<div style="max-width: 600px; margin: 2em auto;">
   <iframe 
     src="https://docs.google.com/presentation/d/e/2PACX-1vRklZWMOaeHsSLN8tsDoFwaFSy66f9A-RQMo_onVW7SxIGkiNcKibIyjLOr6u3r2w/pubembed?start=false&loop=true&delayms=3000"
     style="width: 100%; height: 600px; border: none;"
