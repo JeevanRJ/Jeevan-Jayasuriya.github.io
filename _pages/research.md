@@ -21,7 +21,7 @@ author_profile: true
 
 - [Research on Firefighter Assistive Devices](#research-on-firefighter-assistive-devices)
   - [Can a firefighter exoskeleton help?](#can-a-firefighter-exoskeleton-help?)
-  - [Closed-Loop Human–Machine Interfaces](#closed-loop-human–machine-interfaces)
+  - [Closed-Loop Human–Machine Interfaces](#closed--loop-human–-machine-interfaces)
   - [Hardware and Control Architecture](#hardware-and-control-architecture)
 
 - [Fire safety in coal yards](#fire-safety-in-coal-yards)
