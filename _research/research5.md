@@ -42,7 +42,6 @@ In addition to multimodal physiological measurements, fatigue was assessed using
 <img src="{{ site.baseurl }}/images/Slide5.PNG"
      alt="Research figure"
      style="width: 600px; max-width: 100%; display: block; margin: 1.5em auto;">
-**Slide5.png (see slide 5 / left side image in a gif./ ideal to insert as a gif)**
 
 ### Key Findings and Ongoing Work {#key-findings-and-ongoing-work}
 
