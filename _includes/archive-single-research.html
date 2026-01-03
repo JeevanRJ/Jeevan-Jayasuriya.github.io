@@ -72,7 +72,8 @@
       max-width: {% if has_media %}760px{% else %}1100px{% endif %};
     ">
 
-      <h2 style="margin: 0 0 0.6em 0; font-weight: 800; text-align: left;">
+      <!-- IMPORTANT: anchor id for same-page TOC linking -->
+      <h2 id="{{ post.title | slugify }}" style="margin: 0 0 0.6em 0; font-weight: 800; text-align: left;">
         {{ post.title }}
       </h2>
 
