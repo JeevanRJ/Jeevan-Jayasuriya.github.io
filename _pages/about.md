@@ -9,8 +9,7 @@ redirect_from:
 
 Ph.D. Candidate, Industrial & Systems Engineering
 University of Wisconsin–Madison
- 
- • Neuroergonomics • Human Factors • Human–Machine Interaction 
+• Neuroergonomics • Human Factors • Human–Machine Interaction 
 
 ****
 
