@@ -5,7 +5,7 @@
 <!-- Support for Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
 
-<!-- favicon -->
+<!-- Favicons -->
 <link rel="apple-touch-icon" sizes="180x180" href="{{ base_path }}/images/apple-touch-icon-180x180.png"/>
 <link rel="icon" type="image/svg+xml" href="{{ base_path }}/images/favicon.svg"/>
 <link rel="icon" type="image/png" href="{{ base_path }}/images/favicon-32x32.png" sizes="32x32"/>
@@ -14,34 +14,56 @@
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
 
-<!-- Avatar shape fix 160px-->
 <style>
+/* =====================================================
+   AVATAR: sharp, centered, circular (NO blur)
+   ===================================================== */
 .author__avatar img {
-  max-width: 200px;
+  max-width: 200px;          /* adjust if needed (180–200px ideal) */
   width: auto;
   height: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center center;
   border-radius: 50%;
 }
-</style>
 
-<style>
-/* Highlight active navigation tab */
+/* =====================================================
+   NAVIGATION: active tab highlight (BEST OPTION)
+   ===================================================== */
 .masthead__menu-item a.is-active {
-  color: #c5050c;              /* UW–Madison red */
+  color: #c5050c;            /* UW–Madison red */
   font-weight: 700;
   border-bottom: 3px solid #c5050c;
   padding-bottom: 4px;
 }
 
-/* Optional: hover effect for inactive tabs */
+/* Hover effect for all tabs */
 .masthead__menu-item a:hover {
   color: #c5050c;
 }
+
+/* =====================================================
+   OPTIONAL: improve sidebar readability (safe)
+   ===================================================== */
+.author__name {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.author__content {
+  font-size: 1.0rem;
+  line-height: 1.5;
+}
+
+/* =====================================================
+   MOBILE SAFETY (do not break layout)
+   ===================================================== */
+@media (max-width: 900px) {
+  .author__avatar img {
+    max-width: 160px;
+  }
+}
 </style>
-
-
-
 
 <!-- end custom head snippets -->
