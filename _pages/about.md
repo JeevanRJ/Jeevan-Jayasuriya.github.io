@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-
-****
 Ph.D. Candidate, Industrial & Systems Engineering
 University of Wisconsin–Madison
 
