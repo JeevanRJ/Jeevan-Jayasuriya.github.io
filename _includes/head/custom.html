@@ -29,11 +29,11 @@
 }
 
 /* =====================================================
-   NAVIGATION: ACTIVE TAB HIGHLIGHT (ROBUST FIX)
-   Works even if theme does NOT use .is-active
+   NAVIGATION: highlight ONLY the active page tab
+   (THIS IS THE IMPORTANT PART)
    ===================================================== */
 
-/* Most modern themes (aria-current) */
+/* Active page only */
 .masthead__menu-item a[aria-current="page"],
 .greedy-nav a[aria-current="page"] {
   color: #c5050c;            /* UW–Madison red */
@@ -42,25 +42,14 @@
   padding-bottom: 4px;
 }
 
-/* Older themes (li.active / li.current) */
-.masthead__menu-item.active > a,
-.masthead__menu-item.current > a,
-.greedy-nav .active > a,
-.greedy-nav .current > a {
-  color: #c5050c;
-  font-weight: 700;
-  border-bottom: 3px solid #c5050c;
-  padding-bottom: 4px;
-}
-
-/* Hover effect (all tabs) */
+/* Hover effect (does NOT affect active logic) */
 .masthead__menu-item a:hover,
 .greedy-nav a:hover {
   color: #c5050c;
 }
 
 /* =====================================================
-   OPTIONAL: improve sidebar readability
+   OPTIONAL: sidebar text polish
    ===================================================== */
 .author__name {
   font-size: 1.25rem;
