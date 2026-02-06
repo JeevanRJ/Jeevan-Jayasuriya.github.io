@@ -1,5 +1,5 @@
 ---
-title: "Americal Society of Biomechanics - Annual Meeting 2024 "
+title: "American Society of Biomechanics - Annual Meeting 2024 "
 collection: activities
 location: "Madison, WI"
 date: 2024-08-05
