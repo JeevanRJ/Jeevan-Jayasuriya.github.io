@@ -24,7 +24,7 @@ repository               : "jeevanrj/jeevanrj.github.io"
 author:
   # Biographic information
   avatar           : "profile2.jpg"
-  name             : "Jeevan Jayasuriya"
+  #name             : "Jeevan Jayasuriya"
   pronouns         : "He/him"
   bio              : "PhD Student | Graduate Researcher"
   location         : "Madison, WI"
