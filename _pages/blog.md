@@ -6,10 +6,12 @@ author_profile: true
 ---
 
 {% for post in site.posts %}
-  <h2>{{ post.title }}</h2>
-  <p>{{ post.excerpt }}</p>
+  <div style="margin-bottom: 30px;">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.excerpt }}</p>
 
-  <a href="{{ post.url }}" target="_blank">Read more</a>
-
-  <hr>
+    <a href="{{ post.url }}" target="_blank" style="color: blue;">
+      Read more →
+    </a>
+  </div>
 {% endfor %}
