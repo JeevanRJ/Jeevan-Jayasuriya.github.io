@@ -2,11 +2,6 @@
 title: 'Data Triangulation: Designing for Human Reality, Not Perfect Data'
 date: 2026-04-28
 permalink: /posts/2026/04/data-triangulation/
-tags:
-  - data science
-  - human-centered design
-  - research
-  - triangulation
 ---
 
 *A reflection on a guest lecture by Rohith Karthikeyan (Apple)*
