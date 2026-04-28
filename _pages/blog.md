@@ -6,7 +6,6 @@ author_profile: true
 ---
 
 <style>
-/* 🌐 Page container */
 .blog-wrapper {
   max-width: 1050px;
   margin: auto;
@@ -14,47 +13,29 @@ author_profile: true
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
 }
 
-/* 🧠 Header controls */
+/* 📊 Sort controls */
 .blog-controls {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
   margin-bottom: 60px;
 }
 
-/* 🔍 Search bar (modern) */
-#searchInput {
-  flex: 1;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 1px solid #e5e5e5;
-  font-size: 15px;
-  outline: none;
-  transition: 0.2s;
-}
-
-#searchInput:focus {
-  border-color: #007acc;
-  box-shadow: 0 0 0 3px rgba(0,122,204,0.1);
-}
-
-/* 📊 Sort dropdown */
 #sortSelect {
-  padding: 14px 14px;
+  padding: 14px;
   border-radius: 12px;
   border: 1px solid #e5e5e5;
   font-size: 14px;
   background: white;
 }
 
-/* 📦 Grid layout */
+/* 📦 Grid */
 .blog-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 22px;
 }
 
-/* 🧊 Modern card */
+/* 🧊 Card */
 .blog-card {
   background: #ffffff;
   border-radius: 16px;
@@ -64,13 +45,12 @@ author_profile: true
   transition: all 0.25s ease;
 }
 
-/* hover animation */
 .blog-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* 🏷 Title */
+/* Title */
 .blog-title {
   font-size: 18px;
   font-weight: 650;
@@ -78,14 +58,14 @@ author_profile: true
   color: #111;
 }
 
-/* 📅 Date */
+/* Date */
 .blog-date {
   font-size: 13px;
   color: #888;
   margin-bottom: 12px;
 }
 
-/* 📝 excerpt */
+/* Excerpt */
 .blog-excerpt {
   font-size: 14px;
   color: #555;
@@ -93,7 +73,7 @@ author_profile: true
   margin-bottom: 16px;
 }
 
-/* 🔗 button */
+/* Button */
 .read-more {
   display: inline-block;
   text-decoration: none;
@@ -109,27 +89,25 @@ author_profile: true
   background: #005f99;
 }
 
-/* 📱 mobile fix */
+/* Mobile */
 @media (max-width: 600px) {
   .blog-controls {
-    flex-direction: column;
+    justify-content: center;
   }
 }
 </style>
 
 <div class="blog-wrapper">
 
-  <!-- 🔍 Controls -->
+  <!-- 📊 Sort only -->
   <div class="blog-controls">
-    <input type="text" id="searchInput" placeholder="Search articles...">
-
     <select id="sortSelect">
       <option value="latest">Latest</option>
       <option value="oldest">Oldest</option>
     </select>
   </div>
 
-  <!-- 📚 Blog grid -->
+  <!-- 📚 Blog cards -->
   <div class="blog-container" id="blogList">
 
   {% for post in site.posts %}
@@ -157,21 +135,7 @@ author_profile: true
 </div>
 
 <script>
-// 🔍 search
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".blog-card");
-
-searchInput.addEventListener("input", function () {
-  const value = this.value.toLowerCase();
-
-  cards.forEach(card => {
-    card.style.display = card.innerText.toLowerCase().includes(value)
-      ? "block"
-      : "none";
-  });
-});
-
-// 📊 sort
+// 📊 Sorting only
 const sortSelect = document.getElementById("sortSelect");
 const container = document.getElementById("blogList");
 
