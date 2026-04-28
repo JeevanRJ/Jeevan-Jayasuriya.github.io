@@ -12,12 +12,14 @@ author_profile: true
   padding: 10px;
 }
 
-/* Top controls (search + sort) */
+/* Controls */
 .blog-controls {
   display: flex;
   gap: 10px;
-  margin-bottom: 20px;
   flex-wrap: wrap;
+
+  /* 📏 1 inch gap below search bar area */
+  margin-bottom: 1in;
 }
 
 /* Search */
@@ -28,7 +30,7 @@ author_profile: true
   border: 1px solid #ccc;
 }
 
-/* Sort dropdown */
+/* Sort */
 #sortSelect {
   padding: 10px;
   border-radius: 8px;
@@ -42,11 +44,13 @@ author_profile: true
   gap: 20px;
 }
 
-/* Card */
+/* 🟦 FORCE WHITE CARD (no dark override) */
 .blog-card {
+  background: #ffffff !important;
+  color: #111 !important;
+
   border-radius: 12px;
   padding: 18px;
-  background: #ffffff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
   transition: all 0.25s ease;
 }
@@ -64,16 +68,17 @@ author_profile: true
 
 .blog-date {
   font-size: 13px;
-  color: #888;
+  color: #666;
   margin-bottom: 10px;
 }
 
 .blog-excerpt {
   font-size: 14px;
-  color: #555;
+  color: #444;
   margin-bottom: 15px;
 }
 
+/* Button */
 .read-more {
   text-decoration: none;
   color: white;
@@ -87,19 +92,10 @@ author_profile: true
   background: #005f99;
 }
 
-/* 🌙 Dark mode */
+/* 🌙 Dark mode ONLY for page background (not cards) */
 @media (prefers-color-scheme: dark) {
-  .blog-card {
-    background: #1e1e1e;
-    color: #eaeaea;
-  }
-
-  .blog-excerpt {
-    color: #bbb;
-  }
-
-  .blog-date {
-    color: #999;
+  body {
+    background: #121212;
   }
 
   #searchInput, #sortSelect {
@@ -115,7 +111,7 @@ author_profile: true
   <!-- Controls -->
   <div class="blog-controls">
     🔍 <input type="text" id="searchInput" placeholder="Search blog posts...">
-    
+
     📊 
     <select id="sortSelect">
       <option value="latest">Latest</option>
@@ -123,21 +119,25 @@ author_profile: true
     </select>
   </div>
 
+  <!-- Cards -->
   <div class="blog-container" id="blogList">
   {% for post in site.posts %}
     <div class="blog-card" data-date="{{ post.date | date: '%s' }}">
-      
+
       <div class="blog-title">{{ post.title }}</div>
 
       <div class="blog-date">
         {{ post.date | date: "%B %d, %Y" }}
       </div>
 
-      <div class="blog-excerpt">{{ post.excerpt }}</div>
+      <div class="blog-excerpt">
+        {{ post.excerpt }}
+      </div>
 
       <a href="{{ post.url }}" target="_blank" class="read-more">
         Read More →
       </a>
+
     </div>
   {% endfor %}
   </div>
@@ -149,7 +149,7 @@ author_profile: true
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".blog-card");
 
-searchInput.addEventListener("keyup", function() {
+searchInput.addEventListener("keyup", function () {
   const value = this.value.toLowerCase();
 
   cards.forEach(card => {
@@ -162,7 +162,7 @@ searchInput.addEventListener("keyup", function() {
 const sortSelect = document.getElementById("sortSelect");
 const container = document.getElementById("blogList");
 
-sortSelect.addEventListener("change", function() {
+sortSelect.addEventListener("change", function () {
   const cardsArray = Array.from(container.children);
 
   cardsArray.sort((a, b) => {
@@ -172,7 +172,6 @@ sortSelect.addEventListener("change", function() {
     return this.value === "latest" ? dateB - dateA : dateA - dateB;
   });
 
-  // Re-append sorted cards
   cardsArray.forEach(card => container.appendChild(card));
 });
 </script>
