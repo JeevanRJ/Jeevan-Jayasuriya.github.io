@@ -18,7 +18,7 @@ author_profile: true
   gap: 10px;
   flex-wrap: wrap;
 
-  /* 📏 1 inch gap below search bar area */
+  /* 📏 space below search area */
   margin-bottom: 1in;
 }
 
@@ -44,10 +44,10 @@ author_profile: true
   gap: 20px;
 }
 
-/* 🟦 FORCE WHITE CARD (no dark override) */
+/* 🟦 White Cards ONLY */
 .blog-card {
-  background: #ffffff !important;
-  color: #111 !important;
+  background: #ffffff;
+  color: #111;
 
   border-radius: 12px;
   padding: 18px;
@@ -91,19 +91,6 @@ author_profile: true
 .read-more:hover {
   background: #005f99;
 }
-
-/* 🌙 Dark mode ONLY for page background (not cards) */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: #121212;
-  }
-
-  #searchInput, #sortSelect {
-    background: #2a2a2a;
-    color: white;
-    border: 1px solid #444;
-  }
-}
 </style>
 
 <div class="blog-wrapper">
@@ -119,7 +106,7 @@ author_profile: true
     </select>
   </div>
 
-  <!-- Cards -->
+  <!-- Blog cards -->
   <div class="blog-container" id="blogList">
   {% for post in site.posts %}
     <div class="blog-card" data-date="{{ post.date | date: '%s' }}">
@@ -158,7 +145,7 @@ searchInput.addEventListener("keyup", function () {
   });
 });
 
-// 📊 Sorting
+// 📊 Sort
 const sortSelect = document.getElementById("sortSelect");
 const container = document.getElementById("blogList");
 
