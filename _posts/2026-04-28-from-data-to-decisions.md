@@ -3,11 +3,6 @@ title: "From Data to Decisions: Research That Actually Ships"
 excerpt: "A reflection on a guest lecture by Prakriti Parijat (Instacart) on how research informs real-world product decisions."
 date: 2026-04-28
 permalink: /posts/2026/04/from-data-to-decisions/
-tags:
-  - research
-  - product development
-  - human factors
-  - industry
 ---
 
 ## A reflection on a guest lecture by Prakriti Parijat, Head of Research at Instacart
