@@ -3,11 +3,6 @@ title: "Aviation Human Factors: Beyond the Lab, Into the Cockpit"
 excerpt: "A reflection on a guest lecture by Arjun Rao (Boeing) exploring the gap between lab research and real-world aviation practice."
 date: 2026-04-28
 permalink: /posts/2026/04/aviation-human-factors/
-tags:
-  - aviation
-  - human factors
-  - research
-  - industry
 ---
 
 ## A reflection on a guest lecture by Arjun Rao (Boeing)
