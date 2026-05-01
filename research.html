@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── TOC Pills ── */
+    .toc {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.25rem 1.5rem;
+      margin-bottom: 3rem;
+    }
+    .toc-label {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.75rem;
+    }
+    .toc-pills { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .toc-pills a {
+      font-size: 0.79rem; color: var(--text-mid);
+      background: var(--surface); border: 1px solid var(--border);
+      padding: 5px 14px; border-radius: 20px;
+      text-decoration: none; transition: all 0.15s;
+    }
+    .toc-pills a:hover { color: var(--accent); border-color: var(--accent); background: #eef4fc; }
+
+    /* ── Section Block ── */
+    .r-section { margin-bottom: 5rem; scroll-margin-top: 80px; }
+
+    .r-section-head {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 2rem; padding-bottom: 1rem;
+      border-bottom: 2px solid var(--border);
+    }
+    .r-section-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--accent), var(--navy-mid));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(37,99,168,0.25);
+    }
+    .r-section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.6rem; color: var(--navy); line-height: 1.2;
+    }
+    .r-section-sub {
+      font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;
+    }
+
+    /* ── Overview Card ── */
+    .overview-card {
+      background: linear-gradient(135deg, #f0f5fb 0%, #f7f8fb 100%);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 1.75rem 2rem; margin-bottom: 2rem;
+    }
+    .overview-card p {
+      font-size: 0.93rem; color: var(--text-mid);
+      line-height: 1.9; margin-bottom: 0.85rem;
+    }
+    .overview-card p:last-child { margin-bottom: 0; }
+    .overview-card strong { color: var(--text); }
+    .overview-card a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Sub-section Card ── */
+    .sub-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: var(--radius); overflow: hidden;
+      margin-bottom: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .sub-card:hover { box-shadow: 0 8px 28px rgba(15,27,53,0.08); }
+
+    .sub-card-header {
+      padding: 1.25rem 1.5rem 0;
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .sub-num {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent);
+      background: #e8f0fa; border: 1px solid #c8dcf5;
+      padding: 3px 9px; border-radius: 20px; white-space: nowrap;
+      margin-top: 3px; flex-shrink: 0;
+    }
+    .sub-title {
+      font-size: 1rem; font-weight: 500; color: var(--navy);
+      line-height: 1.35;
+    }
+
+    .sub-card-body { padding: 0.75rem 1.5rem 1.5rem; }
+    .sub-text {
+      font-size: 0.89rem; color: var(--text-mid);
+      line-height: 1.85; margin-bottom: 1rem;
+    }
+    .sub-text:last-child { margin-bottom: 0; }
+    .sub-text strong { color: var(--text); }
+    .sub-text a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+    /* ── Image styles inside cards ── */
+    .sub-img {
+      width: 100%; border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      display: block; margin-bottom: 1rem;
+      background: var(--surface2);
+    }
+    .img-grid-2 {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0.85rem; margin-bottom: 1rem;
+    }
+    .img-grid-2 .sub-img { margin-bottom: 0; }
+
+    /* ── Two-col layout for section + image ── */
+    .split-layout {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-bottom: 1.5rem; align-items: start;
+    }
+    .split-layout .sub-text { margin-bottom: 0; }
+
+    /* ── Divider ── */
+    .r-divider { border: none; border-top: 1px solid var(--border); margin: 4rem 0; }
+
+    /* ── Tag row ── */
+    .tag-row { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.85rem; }
+    .r-tag {
+      font-size: 0.72rem; padding: 3px 10px; border-radius: 20px;
+      background: var(--surface2); color: var(--text-mid);
+      border: 1px solid var(--border);
+    }
+
+    /* ── Highlight box ── */
+    .finding-box {
+      background: linear-gradient(135deg, #e8f0fa, #f0f5fb);
+      border: 1px solid #c8dcf5; border-radius: var(--radius);
+      padding: 1rem 1.25rem; margin-top: 0.85rem;
+      font-size: 0.85rem; color: var(--navy); font-weight: 500;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+
+    /* ── Status Badges ── */
+    .status-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 1px;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 20px;
+      flex-shrink: 0;
+    }
+    .status-ongoing {
+      background: #e6f5ec; color: #1a6e3a;
+      border: 1px solid #a8d9b8;
+    }
+    .status-ongoing::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: #1a6e3a;
+      animation: pulse-dot 1.6s ease-in-out infinite;
+      display: inline-block;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.7); }
+    }
+    .status-completed {
+      background: var(--surface2); color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .status-completed::before {
+      content: '✓'; font-size: 0.65rem; font-weight: 700;
+    }
+
+    /* Filter bar */
+    .filter-bar {
+      display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;
+    }
+    .filter-btn {
+      font-size: 0.8rem; font-weight: 500; padding: 7px 16px;
+      border-radius: 20px; border: 1px solid var(--border);
+      background: var(--surface); color: var(--text-mid);
+      cursor: pointer; transition: all 0.15s; font-family: inherit;
+    }
+    .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .filter-btn.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+
+    @media (max-width: 768px) {
+      .split-layout, .img-grid-2 { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page">
+
+  <!-- ── Page Header ── -->
+  <div style="background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding:3.5rem 0 3rem;">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold-lt);">Research</p>
+      <h1 style="font-family:'DM Serif Display',serif; font-size:2.4rem; color:#fff; line-height:1.2; margin-bottom:0.75rem;">Research</h1>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.93rem; max-width:580px;">
+        Multimodal physiological data · Human sensorimotor control · Human–machine systems · Space &amp; firefighting applications
+      </p>
+
+      <!-- Quick stat badges -->
+      <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.75rem;">
+        <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:0.78rem; padding:5px 14px; border-radius:20px;">🛸 Spaceflight Human Factors</span>
+        <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:0.78rem; padding:5px 14px; border-radius:20px;">🔥 Firefighter Assistive Devices</span>
+        <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:0.78rem; padding:5px 14px; border-radius:20px;">🧠 Neuroergonomics</span>
+        <span style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:0.78rem; padding:5px 14px; border-radius:20px;">🤖 Exoskeleton Design</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="container">
+
+      <!-- Table of Contents -->
+      <div class="toc">
+        <div class="toc-label">Jump to Section</div>
+        <div class="toc-pills">
+          <a href="#overview">Overview</a>
+          <a href="#spaceflight">Spaceflight Research</a>
+          <a href="#firefighter">Firefighter Devices</a>
+          <a href="#coal">Coal Yard Fire Safety</a>
+          <a href="#undergrad">Undergraduate Research</a>
+          <a href="#internship">Internship Projects</a>
+        </div>
+      </div>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterResearch(this,'all')">All Projects</button>
+        <button class="filter-btn" onclick="filterResearch(this,'ongoing')">🟢 Ongoing</button>
+        <button class="filter-btn" onclick="filterResearch(this,'completed')">✓ Completed</button>
+      </div>
+
+      <!-- ═══════════════════════════
+           OVERVIEW
+      ═══════════════════════════ -->
+      <div class="r-section" id="overview">
+        <div class="r-section-head">
+          <div class="r-section-icon">🔬</div>
+          <div>
+            <div class="r-section-title">Research Overview</div>
+            <div class="r-section-sub">Multimodal data · Human performance · Human–machine systems</div>
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <p>
+            My research focuses on analyzing <strong>multimodal physiological and behavioral data</strong> to understand how human sensorimotor control and performance vary under challenging conditions such as <strong>space travel</strong> and <strong>firefighting</strong>, as well as during <strong>human–machine interactions</strong> where system design and autonomy influence human behavior.
+          </p>
+          <p>
+            To achieve this, I integrate insights from <strong>brain imaging, movement kinematics, eye gaze, muscle activation, heart rate,</strong> and <strong>subjective perception</strong>, together with <strong>musculoskeletal analysis</strong> and <strong>data-driven methods</strong> — including statistics, machine learning, and deep learning–based temporal models — to capture <strong>neural, biomechanical, and perceptual markers</strong> of human state.
+          </p>
+          <p>
+            The overarching goal is to translate these insights into the <strong>design and control of human–machine systems</strong> that jointly optimize <strong>human performance, system effectiveness, and safety</strong>. Selected analysis code is on my <a href="https://github.com/JeevanRJ?tab=repositories" target="_blank">GitHub repository</a>.
+          </p>
+        </div>
+
+        <!-- Method tags -->
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem;">
+          <div class="toc-label" style="margin-bottom:0.6rem;">Methods &amp; Tools</div>
+          <div class="tag-row">
+            <span class="r-tag">fNIRS Brain Imaging</span>
+            <span class="r-tag">EMG</span>
+            <span class="r-tag">Eye Tracking</span>
+            <span class="r-tag">Full-body Kinematics</span>
+            <span class="r-tag">Heart Rate</span>
+            <span class="r-tag">GVS</span>
+            <span class="r-tag">Lab Streaming Layer</span>
+            <span class="r-tag">AnyBody Modeling</span>
+            <span class="r-tag">MVN Software</span>
+            <span class="r-tag">Deep Learning (TCN)</span>
+            <span class="r-tag">Machine Learning</span>
+            <span class="r-tag">Musculoskeletal Simulation</span>
+            <span class="r-tag">SolidWorks</span>
+            <span class="r-tag">CAN Bus</span>
+          </div>
+        </div>
+      </div>
+
+      <hr class="r-divider">
+
+      <!-- ═══════════════════════════
+           SPACEFLIGHT
+      ═══════════════════════════ -->
+      <div class="r-section" id="spaceflight" data-status="ongoing">
+        <div class="r-section-head">
+          <div class="r-section-icon">🛸</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="r-section-title">Spaceflight Human Optimization</div>
+              <span class="status-badge status-ongoing">Ongoing</span>
+            </div>
+            <div class="r-section-sub">NASA collaboration · Altered gravity · Fatigue · Sensorimotor performance</div>
+          </div>
+        </div>
+
+        <!-- Sub 1: Hazards -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">01</span>
+            <div class="sub-title">Multiple Spaceflight Hazards</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <div>
+                <p class="sub-text">
+                  Sensorimotor function has been critical to mission success in past space missions and will be even more essential for future long-duration missions to Mars and beyond, where real-time ground support will be limited. During spaceflight, astronauts are exposed to multiple hazards, including <strong>altered gravity</strong> and <strong>fatigue</strong> arising from high workload and sleep deprivation.
+                </p>
+                <p class="sub-text">
+                  Do these stressors jointly impair sensorimotor function, or can humans adapt to sustain performance? To address this, we conducted human-subject experiments collecting multimodal physiological data including brain imaging, eye tracking, full-body kinematics, muscle activity, and heart rate.
+                </p>
+                <div class="tag-row">
+                  <span class="r-tag">Altered Gravity</span>
+                  <span class="r-tag">Fatigue</span>
+                  <span class="r-tag">Multimodal Sensing</span>
+                </div>
+              </div>
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide1.PNG" alt="Multiple spaceflight hazards">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 2: Data Collection -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">02</span>
+            <div class="sub-title">Data Collection and Synchronization</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide2.PNG" alt="Data collection and synchronization">
+              <div>
+                <p class="sub-text">
+                  Multimodal data streams were synchronized using <strong>Lab Streaming Layer (LSL)</strong>. Devices were wirelessly networked to dedicated acquisition systems, with automated error-checking implemented to support robust, high-fidelity data collection.
+                </p>
+                <div class="tag-row">
+                  <span class="r-tag">Lab Streaming Layer</span>
+                  <span class="r-tag">Wireless Networking</span>
+                  <span class="r-tag">Real-time Sync</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 3: GVS -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">03</span>
+            <div class="sub-title">Simulating Altered Gravity with GVS</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <div>
+                <p class="sub-text">
+                  Post-landing effects associated with altered gravity were recreated in the laboratory using <strong>Galvanic Vestibular Stimulation (GVS)</strong>. A controlled electrical current (up to 2 mA) was applied across the mastoid processes, generating an electric field that perturbs vestibular afferent signaling — effectively disrupting vestibular input to the brain.
+                </p>
+                <div class="finding-box">
+                  💡 GVS allows controlled investigation of balance and sensorimotor responses under altered gravity–like conditions without requiring actual spaceflight.
+                </div>
+              </div>
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide3.PNG" alt="Galvanic Vestibular Stimulation">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 4: Test Battery -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">04</span>
+            <div class="sub-title">Sensorimotor Test Battery</div>
+          </div>
+          <div class="sub-card-body">
+            <p class="sub-text">
+              Participants completed a sensorimotor test battery consisting of <strong>13 activities</strong> under the combined effects of GVS and fatigue.
+            </p>
+            <img class="sub-img" src="https://jeevanrj.github.io/images/Slide4.PNG" alt="Sensorimotor test battery — 13 activities">
+          </div>
+        </div>
+
+        <!-- Sub 5: Fatigue -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">05</span>
+            <div class="sub-title">Fatigue Manipulation and Assessment</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide5.PNG" alt="Fatigue manipulation protocol">
+              <div>
+                <p class="sub-text">
+                  <strong>Mental fatigue</strong> (work overload) was induced using a two-back task requiring two hours of continuous working memory engagement.
+                </p>
+                <p class="sub-text">
+                  <strong>Sleep-deprivation fatigue</strong> was induced by keeping participants awake overnight, with the sensorimotor test battery repeated at four equally spaced time points.
+                </p>
+                <p class="sub-text">
+                  Fatigue was assessed using the <strong>PVT, KSS,</strong> and <strong>POMS</strong> scales.
+                </p>
+                <div class="tag-row">
+                  <span class="r-tag">Two-back Task</span>
+                  <span class="r-tag">Sleep Deprivation</span>
+                  <span class="r-tag">PVT · KSS · POMS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 6: Key Findings -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">06</span>
+            <div class="sub-title">Key Findings and Ongoing Work</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <div>
+                <p class="sub-text">
+                  Our analyses revealed <strong>distinct physiological responses</strong> in brain activation and other physiological measures under the interactive effects of altered gravity and fatigue.
+                </p>
+                <div class="finding-box">
+                  📄 Related journal publications are currently in preparation.
+                </div>
+              </div>
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide6.PNG" alt="Key findings — physiological responses">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 7: Gait Prediction -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">07</span>
+            <div class="sub-title">Assistive Technologies for Planetary Surface Exploration</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide7.PNG" alt="Gait instability prediction for planetary exploration">
+              <div>
+                <p class="sub-text">
+                  Post-landing sensorimotor impairment remains a major operational risk during planetary surface exploration. Can gait instabilities be predicted in advance, enabling exoskeletons to transition smoothly into fall-prevention modes?
+                </p>
+                <p class="sub-text">
+                  We trained a <strong>Temporal Convolutional Network (TCN)</strong> to forecast gait instability <strong>0.1–1.0 s into the future</strong> using margin of stability, muscle activation, and kinematic data.
+                </p>
+                <div class="tag-row">
+                  <span class="r-tag">TCN</span>
+                  <span class="r-tag">Gait Prediction</span>
+                  <span class="r-tag">Fall Prevention</span>
+                  <span class="r-tag">Exoskeleton</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="r-divider">
+
+      <!-- ═══════════════════════════
+           FIREFIGHTER
+      ═══════════════════════════ -->
+      <div class="r-section" id="firefighter" data-status="completed">
+        <div class="r-section-head">
+          <div class="r-section-icon">🔥</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="r-section-title">Firefighter Assistive Devices</div>
+              <span class="status-badge status-completed">Completed</span>
+            </div>
+            <div class="r-section-sub">Biomechanics · Exoskeleton design · Closed-loop control</div>
+          </div>
+        </div>
+
+        <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin-bottom:1.5rem;">
+          <p style="font-size:0.9rem; color:var(--text-mid); line-height:1.8; margin:0;">
+            Despite modern protective equipment, <strong style="color:var(--text);">thousands of fireground injuries occur annually</strong>, underscoring the need for effective firefighter assistive technologies.
+          </p>
+        </div>
+        <img class="sub-img" src="https://jeevanrj.github.io/images/Slide9.PNG" alt="Firefighter injury motivation">
+
+        <!-- Sub 1: Biomechanics -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">01</span>
+            <div class="sub-title">Can a Firefighter Exoskeleton Help?</div>
+          </div>
+          <div class="sub-card-body">
+            <p class="sub-text">
+              The lack of firefighter-specific biomechanical data is a major challenge in designing effective assistive devices. We collected biomechanical data from <strong>professional firefighters</strong> to create a comprehensive database of movement and loading patterns. Activities were visualized using <strong>MVN software</strong>, and musculoskeletal simulations were run in the <strong>AnyBody Modeling System</strong>.
+            </p>
+            <div class="img-grid-2">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide10.PNG" alt="MVN motion capture visualization">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide11.PNG" alt="AnyBody musculoskeletal simulation">
+            </div>
+            <div class="tag-row">
+              <span class="r-tag">MVN Software</span>
+              <span class="r-tag">AnyBody Modeling</span>
+              <span class="r-tag">Musculoskeletal Analysis</span>
+              <span class="r-tag">Professional Firefighters</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 2: Closed-loop HMI -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">02</span>
+            <div class="sub-title">Closed-Loop Human–Machine Interfaces</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="split-layout">
+              <div>
+                <p class="sub-text">
+                  Closed-loop human–machine interfaces are critical for exoskeletons that prioritize safety, comfort, and performance. Shown is a <strong>PID controller</strong> implemented in AnyBody Modeling System (AMS) to regulate the activation level of a targeted muscle during elbow flexion under an external load.
+                </p>
+                <p class="sub-text">
+                  Control systems that explicitly account for human–exoskeleton interactions reduce the number of iterations required during prototyping.
+                </p>
+                <div class="tag-row">
+                  <span class="r-tag">PID Control</span>
+                  <span class="r-tag">AnyBody AMS</span>
+                  <span class="r-tag">Human-in-the-loop</span>
+                </div>
+              </div>
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide15.PNG" alt="Closed-loop PID controller AMS">
+            </div>
+          </div>
+        </div>
+
+        <!-- Sub 3: Hardware -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">03</span>
+            <div class="sub-title">Hardware and Control Architecture</div>
+          </div>
+          <div class="sub-card-body">
+            <p class="sub-text">
+              Actuators were selected to match biomechanical demands (joint range of motion and torque requirements) while minimizing weight, size, and cost. <strong>CAN bus</strong> communication was established between controllers and actuators. Multiple active and passive control strategies were evaluated with emphasis on safety and reliability.
+            </p>
+            <img class="sub-img" src="https://jeevanrj.github.io/images/Slide17.PNG" alt="Hardware and actuator selection">
+            <div class="img-grid-2">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide18.png" alt="Zero Interaction Force Controller">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide19.PNG" alt="Control strategy evaluation">
+            </div>
+            <p class="sub-text">
+              Multiple design concepts were developed in <strong>SolidWorks</strong> and iteratively refined based on feedback from professional firefighters.
+            </p>
+            <img class="sub-img" src="https://jeevanrj.github.io/images/Slide20.PNG" alt="SolidWorks exoskeleton design concepts">
+            <div class="tag-row">
+              <span class="r-tag">CAN Bus</span>
+              <span class="r-tag">SolidWorks</span>
+              <span class="r-tag">Zero Interaction Force</span>
+              <span class="r-tag">Actuator Selection</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="r-divider">
+
+      <!-- ═══════════════════════════
+           COAL YARDS
+      ═══════════════════════════ -->
+      <div class="r-section" id="coal" data-status="completed">
+        <div class="r-section-head">
+          <div class="r-section-icon">⚡</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="r-section-title">Fire Safety in Coal Yards</div>
+              <span class="status-badge status-completed">Completed</span>
+            </div>
+            <div class="r-section-sub">Automated fire suppression · Proactive hazard mitigation</div>
+          </div>
+        </div>
+
+        <div class="sub-card">
+          <div class="sub-card-body" style="padding-top:1.5rem;">
+            <div class="split-layout">
+              <div>
+                <p class="sub-text">
+                  Coal remains the main source of power in many countries. Coal yards are prone to <strong>spontaneous ignition</strong> — a problem faced in every country that stores or transports coal. Heating and self-ignition possibilities can never be entirely dismissed.
+                </p>
+                <p class="sub-text">
+                  This project investigated a <strong>cost-effective, proactive approach</strong> for mitigating fire hazards in coal yards using an automated water dispensing system.
+                </p>
+                <div class="finding-box">
+                  📄 <a href="https://link.springer.com/article/10.1007/s40789-022-00488-y" target="_blank" style="color:var(--navy); text-decoration:underline;">View journal publication →</a>
+                </div>
+              </div>
+              <img class="sub-img" style="margin:0;" src="https://jeevanrj.github.io/images/Slide21.PNG" alt="Coal yard fire hazard overview">
+            </div>
+            <div class="img-grid-2" style="margin-top:1rem;">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide22.PNG" alt="System design">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide23.PNG" alt="Implementation">
+            </div>
+            <img class="sub-img" src="https://jeevanrj.github.io/images/Slide24.PNG" alt="Results and evaluation">
+          </div>
+        </div>
+      </div>
+
+      <hr class="r-divider">
+
+      <!-- ═══════════════════════════
+           UNDERGRAD
+      ═══════════════════════════ -->
+      <div class="r-section" id="undergrad" data-status="completed">
+        <div class="r-section-head">
+          <div class="r-section-icon">🎓</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="r-section-title">Other Undergraduate Research</div>
+              <span class="status-badge status-completed">Completed</span>
+            </div>
+            <div class="r-section-sub">Robotics · Machine vision · Embedded systems</div>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+
+          <div class="sub-card">
+            <div class="sub-card-header">
+              <span class="sub-num">01</span>
+              <div class="sub-title">Obstacle Navigation in Mobile Robotics</div>
+            </div>
+            <div class="sub-card-body">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide25.PNG" alt="Mobile robotics obstacle navigation">
+            </div>
+          </div>
+
+          <div class="sub-card">
+            <div class="sub-card-header">
+              <span class="sub-num">02</span>
+              <div class="sub-title">Machine Vision Based Grain Classification System</div>
+            </div>
+            <div class="sub-card-body">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide26.PNG" alt="Machine vision grain classification">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr class="r-divider">
+
+      <!-- ═══════════════════════════
+           INTERNSHIP
+      ═══════════════════════════ -->
+      <div class="r-section" id="internship" data-status="completed">
+        <div class="r-section-head">
+          <div class="r-section-icon">🏭</div>
+          <div style="flex:1;">
+            <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+              <div class="r-section-title">Industrial Internship Projects</div>
+              <span class="status-badge status-completed">Completed</span>
+            </div>
+            <div class="r-section-sub">Pneumatics · Automation · Production systems</div>
+          </div>
+        </div>
+
+        <!-- Project 1 -->
+        <div class="sub-card" style="margin-bottom:1.25rem;">
+          <div class="sub-card-header">
+            <span class="sub-num">01</span>
+            <div class="sub-title">Pneumatic Based Electrical Component Testing Machine</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="img-grid-2">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide27.PNG" alt="Pneumatic testing machine design">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide28.PNG" alt="Pneumatic testing machine implementation">
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="sub-card">
+          <div class="sub-card-header">
+            <span class="sub-num">02</span>
+            <div class="sub-title">Conveyor System for Collecting Output from the Production Floor</div>
+          </div>
+          <div class="sub-card-body">
+            <div class="img-grid-2">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide29.PNG" alt="Conveyor system design">
+              <img class="sub-img" src="https://jeevanrj.github.io/images/Slide30.PNG" alt="Conveyor system implementation">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- .page -->
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function filterResearch(btn, filter) {
+    // Update active button
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide sections (skip overview which has no status)
+    document.querySelectorAll('.r-section[data-status]').forEach(sec => {
+      const divider = sec.previousElementSibling;
+      const show = filter === 'all' || sec.dataset.status === filter;
+      sec.style.display = show ? '' : 'none';
+      // Also hide the hr divider above hidden sections
+      if (divider && divider.tagName === 'HR') {
+        divider.style.display = show ? '' : 'none';
+      }
+    });
+  }
+</script>
+</html>

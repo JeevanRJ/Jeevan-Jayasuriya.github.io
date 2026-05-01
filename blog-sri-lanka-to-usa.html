@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Sri Lanka to the USA — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-hero { background:linear-gradient(135deg,#0f1b35,#2563a8); height:240px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .post-wrap { max-width:720px; margin:0 auto; padding:3rem 2rem 5rem; }
+    .post-cat { font-size:0.68rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:#1a6e3a; margin-bottom:0.75rem; }
+    .post-title { font-family:'DM Serif Display',serif; font-size:2.2rem; color:var(--navy); line-height:1.2; margin-bottom:0.75rem; }
+    .post-meta { font-size:0.82rem; color:var(--text-muted); margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border); }
+    .post-body { font-size:0.97rem; color:var(--text-mid); line-height:1.95; }
+    .post-body p { margin-bottom:1.25rem; }
+    .post-body h2 { font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--navy); margin:2.5rem 0 0.75rem; }
+    .post-body ul { padding-left:1.25rem; margin-bottom:1.25rem; }
+    .post-body ul li { margin-bottom:0.4rem; }
+    .post-body strong { color:var(--text); }
+    .back-link { display:inline-flex; align-items:center; gap:6px; font-size:0.83rem; color:var(--text-mid); text-decoration:none; margin-bottom:2rem; transition:color 0.15s; }
+    .back-link:hover { color:var(--accent); }
+    .post-nav { display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); gap:1rem; flex-wrap:wrap; }
+    .post-nav a { font-size:0.83rem; color:var(--accent); text-decoration:none; }
+    .post-nav a:hover { text-decoration:underline; }
+    .emoji-section { font-size:1.1rem; margin-right:4px; }
+
+    /* ── Photo styles ── */
+    .photo-label {
+      font-size:0.68rem; font-weight:500; letter-spacing:2px;
+      text-transform:uppercase; color:var(--text-muted);
+      margin-bottom:0.75rem;
+    }
+    .photo-single { margin:1.75rem 0; }
+    .photo-item {
+      border-radius:var(--radius); overflow:hidden;
+      cursor:pointer; border:1px solid var(--border);
+      background:var(--surface2);
+    }
+    .photo-item img {
+      width:100%; display:block;
+      transition:transform 0.3s; max-height:420px;
+      object-fit:cover;
+    }
+    .photo-item:hover img { transform:scale(1.02); }
+    .photo-caption {
+      font-size:0.78rem; color:var(--text-muted);
+      margin-top:0.5rem; font-style:italic; text-align:center;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display:none; position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,0.9);
+      align-items:center; justify-content:center;
+    }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:90vw; max-height:88vh; border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
+    .lb-close {
+      position:absolute; top:1.25rem; right:1.5rem;
+      background:none; border:none; color:#fff;
+      font-size:2rem; cursor:pointer; line-height:1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page" style="padding-top:0;">
+  <div class="post-hero">✈️</div>
+
+  <div class="post-wrap">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <div class="post-cat">Personal</div>
+    <h1 class="post-title">From Sri Lanka to the USA: A Journey That Changed Me</h1>
+    <div class="post-meta">2022 · 4 min read</div>
+
+    <div class="post-body">
+      <p>Some journeys don't begin at the airport — they begin in your heart, quietly, long before you pack your bags.</p>
+      <p>For me, that journey started in Sri Lanka. A place full of warmth — not just the weather, but the people, the food, and the feeling of home. Life there was familiar, comfortable, and deeply connected to family and routine.</p>
+      <p>But somewhere along the way, I started dreaming of something bigger. A different life. A new challenge. A new version of myself.</p>
+      <p>And one day, that dream turned into a journey I had been waiting for.</p>
+
+      <h2><span class="emoji-section">🌏</span> Leaving Home</h2>
+      <p>The goodbye was harder than I expected.</p>
+      <p>No matter how strong you think you are, nothing really prepares you for that moment — standing at the airport, knowing life is about to change. I carried excitement in one hand and uncertainty in the other.</p>
+      <p>The flight felt long. Not just because of the hours, but because of the thoughts — questions, hopes, and quiet worries traveling with me.</p>
+
+      <h2><span class="emoji-section">🇺🇸</span> First Impressions</h2>
+      <p>When I arrived in the United States, everything felt… different.</p>
+      <p>The roads, the silence, the pace of life — even the way people interacted. But the biggest surprise? The weather.</p>
+      <p>Coming from Sri Lanka's warm, tropical climate, I wasn't ready for the cold. The first time I felt that freezing wind, it didn't just touch my skin — it went straight through me. Snow, which once looked magical in pictures, quickly became something I had to learn to live with.</p>
+      <p>Simple things became challenges:</p>
+      <ul>
+        <li>Walking outside in winter</li>
+        <li>Dressing in layers</li>
+        <li>Planning even short trips outside</li>
+      </ul>
+
+      <!-- ══════════════════════════════════════
+           PHOTO 1
+           Upload your image to GitHub as:
+           images/blog/srilanka/photo1.jpg
+           Then change the src below to match.
+           The image disappears silently if not found.
+      ══════════════════════════════════════ -->
+      <div class="photo-single">
+        <div class="photo-label">📷 Photo</div>
+        <div class="photo-item" onclick="openLb('images/blog/srilanka/photo1.jpg')">
+          <img
+            src="images/blog/srilanka/photo1.jpg"
+            alt="First impressions of the USA"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">First winter in the USA</p>
+      </div>
+
+      <h2><span class="emoji-section">🌱</span> The Real Journey Begins</h2>
+      <p>Slowly, reality set in. This wasn't just a new place — it was a completely new life.</p>
+      <p>Everything had to be learned again: a different education system, communicating in English every day, managing time, studies, and responsibilities, living far from family support, and adjusting to a new culture and lifestyle.</p>
+      <p>There were moments of confusion and self-doubt, but having my wife by my side made this journey stronger and more meaningful. Even on difficult days, that support made a difference. And over time, those challenges started turning into growth.</p>
+
+      <h2><span class="emoji-section">✨</span> Becoming Someone New</h2>
+      <p>Little by little, things began to feel more familiar. Not the same as home — but something new, something I was building for myself.</p>
+      <p>I realized this journey is not just about moving from one country to another. It's about stepping out of your comfort zone, facing challenges you never imagined, and slowly becoming a stronger version of yourself.</p>
+
+      <!-- ══════════════════════════════════════
+           PHOTO 2
+           Upload your image to GitHub as:
+           images/blog/srilanka/photo2.jpg
+           Then change the src below to match.
+           The image disappears silently if not found.
+      ══════════════════════════════════════ -->
+      <div class="photo-single">
+        <div class="photo-label">📷 Photo</div>
+        <div class="photo-item" onclick="openLb('images/blog/srilanka/photo2.jpg')">
+          <img
+            src="images/blog/srilanka/photo2.jpg"
+            alt="Building a new life in Madison"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Add your caption here — e.g. "Building a new life in Madison, WI"</p>
+      </div>
+
+      <h2><span class="emoji-section">💭</span> Looking Back</h2>
+      <p>If I could go back to that moment at the airport, I would still choose this path. Not because it is easy — but because it is worth it.</p>
+      <p>This journey from Sri Lanka to the USA is still ongoing. And every day, I am learning, adapting, and growing — one step at a time.</p>
+    </div>
+
+    <div class="post-nav">
+      <a href="blog.html">← All Posts</a>
+      <a href="blog-madison-life.html">Life Around Madison, WI →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+</body>
+</html>

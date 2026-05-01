@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .pub-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; transition:border-color 0.2s; }
+    .pub-card:hover { border-color:var(--accent-lt); }
+    .pub-type { font-size:0.68rem; font-weight:500; letter-spacing:1.2px; text-transform:uppercase; padding:3px 9px; border-radius:20px; }
+    .type-journal { background:#ddeeff; color:#1a5a9a; }
+    .type-conf    { background:#fef3e2; color:#8a5c10; }
+    .type-preprint{ background:#f0eaff; color:#5c3a9a; }
+    .pub-title { font-size:0.97rem; font-weight:500; color:var(--navy); margin:0.45rem 0 0.3rem; line-height:1.45; }
+    .pub-authors { font-size:0.83rem; color:var(--text-mid); margin-bottom:0.25rem; }
+    .pub-authors strong { color:var(--text); }
+    .pub-venue { font-size:0.82rem; color:var(--text-muted); font-style:italic; margin-bottom:0.85rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page">
+
+  <!-- Header -->
+  <div style="background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding:3.5rem 0 3rem;">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold-lt);">Publications</p>
+      <h1 style="font-family:'DM Serif Display',serif; font-size:2.4rem; color:#fff; line-height:1.2; margin-bottom:0.75rem;">My Work</h1>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.93rem; max-width:520px;">
+        Peer-reviewed journal articles, conference papers, and preprints. 
+        <strong style="color:rgba(255,255,255,0.85);">J. Jayasuriya</strong> is highlighted in each entry.
+      </p>
+      <div style="margin-top:1.5rem;">
+        <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank" class="btn btn-primary btn-sm">Google Scholar →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Filter strip -->
+  <div style="background:var(--surface); border-bottom:1px solid var(--border); padding:1rem 0; position:sticky; top:var(--nav-h); z-index:50;">
+    <div class="container" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+      <button class="btn btn-tag filter-btn active-filter" data-filter="all" onclick="filterPubs(this,'all')" style="font-weight:500;">All</button>
+      <button class="btn btn-tag filter-btn" data-filter="journal" onclick="filterPubs(this,'journal')">Journal Articles</button>
+      <button class="btn btn-tag filter-btn" data-filter="conf" onclick="filterPubs(this,'conf')">Conference Papers</button>
+      <button class="btn btn-tag filter-btn" data-filter="preprint" onclick="filterPubs(this,'preprint')">Preprints</button>
+    </div>
+  </div>
+
+  <!-- Publication List -->
+  <div class="section">
+    <div class="container">
+
+       <!-- ── 2025 ── -->
+      <div style="margin-bottom:2rem;">
+        <h2 style="font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">2025</h2>
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+
+   <!-- ── HFES2025 ── -->
+          <div class="pub-card" data-type="conf">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-conf">Conference</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2025</span>
+            </div>
+            <div class="pub-title">Pulse Rate Variability From Wearable Wristwatches as a Surrogate for Heart Rate Variability? We Think Not Yet</div>
+            <div class="pub-authors">Shanghavi, A., Co-author,<strong> Jayasuriya, J.</strong>, Cai, Y.,&amp; Mehta, R. K.</div>
+            <div class="pub-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 2024.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="https://doi.org/10.1177/10711813251357929" class="btn btn-outline btn-sm">DOI</a>
+              <!--  <a href="#" class="btn btn-outline btn-sm">Slides</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 2024 ── -->
+      <div style="margin-bottom:2rem;">
+        <h2 style="font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">2024</h2>
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+
+  <!-- ─  <div class="pub-card" data-type="journal">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-journal">Journal</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2024</span>
+            </div>
+            <div class="pub-title">Replace with your actual publication title here</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>, Co-author, A., Co-author, B., &amp; Mehta, R. K.</div>
+            <div class="pub-venue">Journal of Neuroengineering and Rehabilitation, XX(X), XX–XX.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="#" class="btn btn-outline btn-sm">DOI</a>
+              <a href="#" class="btn btn-outline btn-sm">PDF</a>
+              <a href="#" class="btn btn-outline btn-sm">Code</a>
+            </div>
+          </div>  -->
+          
+            <!-- ── HFES2024 ── -->
+          <div class="pub-card" data-type="conf">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-conf">Conference</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2024</span>
+            </div>
+            <div class="pub-title">Selective Sensorimotor Impairments With Mental Fatigue Associated With G-transitions During and After Spaceflight</div>
+            <div class="pub-authors">Hayes, J., Co-author, Fairchild, B., Nichols, K.,<strong> Jayasuria, J.</strong>,&amp; Mehta, R. K.</div>
+            <div class="pub-venue">Proceedings of the Human Factors and Ergonomics Society Annual Meeting, 2024.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="https://doi.org/10.1177/10711813241275073" class="btn btn-outline btn-sm">DOI</a>
+             <!-- <a href="#" class="btn btn-outline btn-sm">Slides</a> -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    <!-- ── 2023 ── -->
+<!--        <div style="margin-bottom:2rem;">
+        <h2 style="font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">2023</h2>
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+
+           <div class="pub-card" data-type="journal">
+         <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-journal">Journal</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2023</span>
+            </div>
+            <div class="pub-title">Replace with your publication title here</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>, Co-author, A., &amp; Co-author, B.</div>
+            <div class="pub-venue">Applied Ergonomics, XX, XXXXXX.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="#" class="btn btn-outline btn-sm">DOI</a>
+              <a href="#" class="btn btn-outline btn-sm">PDF</a>
+            </div>
+        
+
+          <div class="pub-card" data-type="conf">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-conf">Conference</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2023</span>
+            </div>
+            <div class="pub-title">Replace with your conference paper title here</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>, &amp; Mehta, R. K.</div>
+            <div class="pub-venue">IEEE International Conference on Systems, Man, and Cybernetics (SMC), 2023.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="#" class="btn btn-outline btn-sm">DOI</a>
+            </div>
+          </div>   </div> 
+
+        </div>
+      </div> -->
+
+      <!-- ── Pre-PhD ── -->
+      <div>
+        <h2 style="font-size:0.75rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--text-muted); border-bottom:1px solid var(--border); padding-bottom:0.5rem; margin-bottom:1rem;">Pre-PhD</h2>
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+
+            <!-- ── Clarkson publication1 ── -->
+          <div class="pub-card" data-type="journal">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-journal">Journal</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2026</span>
+            </div>
+            <div class="pub-title">Firefighter motion capture data set and biomechanical analysis of task-specific gear effects and loading asymmetries</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>,Co-author, Bazzocchi, M. C. F., Fite, K., &amp; Martinez, M. </div>
+            <div class="pub-venue">Ergonomics, Volume(Issue), pp. 1–22 (2026).</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="https://doi.org/10.1080/00140139.2025.2605062" class="btn btn-outline btn-sm">DOI</a>
+            <!--  <a href="#" class="btn btn-outline btn-sm">PDF</a> -->
+            </div>   
+            
+          </div>
+
+          <!-- ── Clarkson publication2 ── -->
+          <div class="pub-card" data-type="journal">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-journal">Journal</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2025</span>
+            </div>
+            <div class="pub-title">Modeling and analysis of firefighter musculoskeletal biomechanics for lower-extremity exoskeletons</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>, Co-author, Bazzocchi, M. C. F., Fite, K., &amp; Martinez, M. </div>
+            <div class="pub-venue">Journal of Safety Research, Just accepted.</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="#" class="btn btn-outline btn-sm">DOI</a>
+            <!--  <a href="#" class="btn btn-outline btn-sm">PDF</a> -->
+            </div>   
+            
+          </div>
+
+          <!-- ── USJP publication ── -->
+          <div class="pub-card" data-type="journal">
+            <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+              <span class="pub-type type-journal">Journal</span>
+              <span style="font-size:0.78rem; color:var(--text-muted);">2022</span>
+            </div>
+            <div class="pub-title">Automated Water Dispensing System for Controlling Fires in Coal Yards</div>
+            <div class="pub-authors"><strong>Jayasuriya, J.</strong>, Co-author, Moser, I. &amp; de Mel, R.</div>
+            <div class="pub-venue">International Journal of Coal Science & Technology, Vol. 9, Art. 23 (2022).</div>
+            <div style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+              <a href="https://doi.org/10.1007/s40789-022-00488-y" class="btn btn-outline btn-sm">DOI</a>
+             <!-- <a href="#" class="btn btn-outline btn-sm">PDF</a> -->
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+function filterPubs(btn, type) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active-filter'));
+  btn.classList.add('active-filter');
+  btn.style.background = 'var(--accent)';
+  btn.style.color = '#fff';
+  btn.style.borderColor = 'var(--accent)';
+  document.querySelectorAll('.filter-btn:not(.active-filter)').forEach(b => {
+    b.style.background = ''; b.style.color = ''; b.style.borderColor = '';
+  });
+  document.querySelectorAll('.pub-card').forEach(card => {
+    card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+  });
+}
+// Init style for active button
+document.querySelector('.filter-btn.active-filter').style.cssText = 'background:var(--accent);color:#fff;border-color:var(--accent);font-weight:500;';
+</script>
+</body>
+</html>

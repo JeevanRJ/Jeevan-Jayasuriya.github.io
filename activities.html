@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activities — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+
+    /* ── Activity Cards ── */
+    .activity-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      transition: box-shadow 0.22s;
+    }
+    .activity-card:hover {
+      box-shadow: 0 8px 28px rgba(15,27,53,0.08);
+    }
+    .activity-card-top {
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, var(--accent), var(--gold)) 1;
+      padding: 1.75rem 2rem 1.5rem;
+    }
+    .activity-year-badge {
+      display: inline-block;
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--accent);
+      background: #e8f0fa; border: 1px solid #c8dcf5;
+      padding: 3px 10px; border-radius: 20px;
+      margin-bottom: 0.75rem;
+    }
+    .activity-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.2rem; color: var(--navy);
+      margin-bottom: 0.25rem; line-height: 1.3;
+    }
+    .activity-location {
+      font-size: 0.82rem; color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+    .activity-body {
+      font-size: 0.9rem; color: var(--text-mid);
+      line-height: 1.85;
+    }
+    .activity-body p { margin-bottom: 0.65rem; }
+    .activity-body p:last-child { margin-bottom: 0; }
+    .activity-body a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+    .activity-body a:hover { color: var(--navy); }
+
+    .award-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #fef3e2; border: 1px solid #f0d49a;
+      color: #8a5c10; font-size: 0.78rem; font-weight: 500;
+      padding: 5px 12px; border-radius: 20px;
+      margin-top: 0.85rem;
+    }
+    .award-tag a { color: #8a5c10 !important; text-decoration: underline; }
+
+    /* ── Toggle Button ── */
+    .gallery-toggle {
+      display: flex; align-items: center; gap: 8px;
+      width: 100%; padding: 0.85rem 2rem;
+      background: var(--surface); border: none;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem; font-weight: 500; color: var(--text-mid);
+      cursor: pointer; text-align: left;
+      transition: background 0.15s, color 0.15s;
+      font-family: inherit;
+    }
+    .gallery-toggle:hover { background: #e8f0fa; color: var(--accent); }
+    .gallery-toggle.open { color: var(--accent); background: #eef4fc; }
+    .toggle-icon { margin-left: auto; font-size: 0.75rem; transition: transform 0.25s; }
+    .gallery-toggle.open .toggle-icon { transform: rotate(180deg); }
+
+    /* ── Panel ── */
+    .gallery-panel {
+      display: none;
+      padding: 1.75rem 2rem;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .gallery-panel.open { display: block; }
+
+    /* ── Panel Section Label ── */
+    .panel-label {
+      font-size: 0.68rem; font-weight: 500; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 0.85rem; margin-top: 1.5rem;
+    }
+    .panel-label:first-child { margin-top: 0; }
+
+    /* ── Responsive Slide Embed ── */
+    .slide-wrap {
+      position: relative; width: 100%; padding-top: 56.25%;
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border);
+      background: #f0f2f8;
+      margin-bottom: 1rem;
+    }
+    .slide-wrap iframe {
+      position: absolute; top: 0; left: 0;
+      width: 100%; height: 100%; border: none;
+    }
+    .slide-caption {
+      font-size: 0.78rem; color: var(--text-muted);
+      margin-bottom: 1.5rem; margin-top: -0.5rem;
+      font-style: italic;
+    }
+
+    /* ── Poster Image ── */
+    .poster-wrap {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      max-width: 640px;
+      cursor: pointer;
+    }
+    .poster-wrap img {
+      width: 100%; display: block;
+      transition: transform 0.3s;
+    }
+    .poster-wrap:hover img { transform: scale(1.01); }
+    .poster-caption {
+      font-size: 0.75rem; color: var(--text-muted);
+      margin-top: 0.5rem; font-style: italic;
+    }
+
+    /* ── Photo Grid ── */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+    .photo-item {
+      border-radius: var(--radius-sm); overflow: hidden;
+      aspect-ratio: 4/3; background: var(--surface2);
+      border: 1px solid var(--border); cursor: pointer;
+    }
+    .photo-item img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform 0.3s; display: block;
+    }
+    .photo-item:hover img { transform: scale(1.04); }
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 6px; color: var(--text-muted);
+      font-size: 0.72rem; text-align: center; padding: 1rem;
+    }
+    .photo-placeholder span { font-size: 1.6rem; }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display: none; position: fixed;
+      inset: 0; z-index: 500;
+      background: rgba(0,0,0,0.88);
+      align-items: center; justify-content: center;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: 90vw; max-height: 85vh;
+      border-radius: var(--radius);
+      box-shadow: 0 24px 80px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute; top: 1.25rem; right: 1.5rem;
+      background: none; border: none; color: #fff;
+      font-size: 1.8rem; cursor: pointer; line-height: 1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="page">
+
+  <!-- Header -->
+  <div style="background:linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding:3.5rem 0 3rem;">
+    <div class="container">
+      <p class="section-label" style="color:var(--gold-lt);">Activities</p>
+      <h1 style="font-family:'DM Serif Display',serif; font-size:2.4rem; color:#fff; line-height:1.2; margin-bottom:0.75rem;">Activities</h1>
+      <p style="color:rgba(255,255,255,0.65); font-size:0.93rem; max-width:520px;">
+        Conference presentations, research milestones, and academic journey highlights.
+      </p>
+    </div>
+  </div>
+
+  <!-- Activities -->
+  <div class="section">
+    <div class="container">
+
+      <!-- ══════════════════════════════
+           ASPIRE HFES 2025
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2025 · Conference</div>
+          <div class="activity-title">ASPIRE HFES 2025</div>
+          <div class="activity-location">📍 Chicago, IL</div>
+          <div class="activity-body">
+            <p>Presented two of our recent works at the HFES 2025 event held in Chicago!</p>
+            <p>Astronauts experience vestibular impairments induced by altered gravity during spaceflight. My first talk focused on how these vestibular impairments affect postural balance and neural activation using Galvanic Vestibular Stimulation (GVS) and fNIRS neuroimaging.</p>
+            <p>Coexisting spaceflight hazards such as vestibular impairments and mental fatigue can influence fine motor coordination, which is essential for mission-critical operational tasks. The second talk explained how these interacting factors shape fine motor performance under spaceflight-analog conditions.</p>
+            <div class="award-tag">
+              🏆 <a href="https://hfes-aerospace.org/2025/11/04/aspire-25-highlights/" target="_blank">Best Student Work Award</a> — HFES Aerospace Systems Technical Group (ASTG)
+            </div>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          📊 View Presentations & Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+
+          <!-- Slide 1 -->
+          <div class="panel-label">Presentation 1 — Vestibular Impairments, Postural Balance &amp; Neural Activation</div>
+          <div class="slide-wrap">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR_JUHrePqcQnRrta_iIHXpmT9fe7AtvPUA4Ccl8i7gzEEo__5uwXSTkdoPkAiWfQ/pubembed?start=false&loop=true&delayms=3000"
+              allowfullscreen mozallowfullscreen webkitallowfullscreen>
+            </iframe>
+          </div>
+          <p class="slide-caption">GVS &amp; fNIRS neuroimaging — postural balance under vestibular impairments</p>
+
+          <!-- Slide 2 -->
+          <div class="panel-label">Presentation 2 — Fine Motor Coordination Under Spaceflight-Analog Conditions</div>
+          <div class="slide-wrap">
+            <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vR5mdQdzsFyFe0PTORhrB9_uw-BB23Nyr1iwDuch1V-ANN8Lit8dsBHpk1WxwVZXA/pubembed?start=false&loop=true&delayms=3000"
+              allowfullscreen mozallowfullscreen webkitallowfullscreen>
+            </iframe>
+          </div>
+          <p class="slide-caption">Interacting effects of vestibular impairments and mental fatigue on fine motor performance</p>
+
+          <!-- Photos -->
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2025_1.jpg" alt="HFES 2025"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2025_1.jpg</div>'">
+            </div>
+           <!--  <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2025-2.jpg" alt="HFES 2025"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2025-2.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2025-3.jpg" alt="HFES 2025"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2025-3.jpg</div>'">
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           NASA IWS 2025
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2025 · Conference</div>
+          <div class="activity-title">NASA IWS 2025</div>
+          <div class="activity-location">📍 Galveston, TX</div>
+          <div class="activity-body">
+            <p>Fall 2024: Initiated data collection for the first phase of a collaborative project with the Neuroscience Laboratory at NASA Johnson Space Center. Preliminary findings from this work, titled <em>"Characterizing and Mitigating the Interactive Impacts of Fatigue- and Altered Gravity–Related Stressors on Sensorimotor, Behavioral, and Operational Outcomes,"</em> were presented at the NASA Human Research Program Investigators' Workshop (IWS) 2025.</p>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          🗂 View Poster &amp; Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+
+          <!-- Poster -->
+          <div class="panel-label">Research Poster</div>
+          <div class="poster-wrap" onclick="openLightbox(this)">
+            <img src="images/IWS_poster.jpg" alt="NASA IWS 2025 Poster"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <div style="display:none; padding:2rem; text-align:center; color:var(--text-muted); font-size:0.85rem;">
+              📄 Upload your poster as <code>images/IWS_poster.jpg</code> in your GitHub repo
+            </div>
+          </div>
+          <p class="poster-caption">Click the poster to view full size</p>
+
+          <!-- Photos -->
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/nasa_iws.jpg" alt="NASA IWS 2025"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/nasa_iws.jpg</div>'">
+            </div>
+            <!-- <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/nasa-iws-2.jpg" alt="NASA IWS 2025"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/nasa-iws-2.jpg</div>'">
+            </div> -->
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           ASPIRE HFES 2024
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2024 · Conference</div>
+          <div class="activity-title">ASPIRE HFES 2024</div>
+          <div class="activity-location">📍 Phoenix, Arizona</div>
+          <div class="activity-body">
+            <p>Attended the annual meeting of the Human Factors and Ergonomics Society (HFES) for the first time, where I gained valuable exposure to how human factors principles are integrated into engineering design across diverse application domains.</p>
+            <div class="award-tag">
+              🏆 <a href="https://www.linkedin.com/posts/hfes-aerospace_congratulations-to-john-hayes-from-texas-activity-7240411545040486400-gyXO" target="_blank">Best Student Award (Awarded to our research team)</a> — HFES Aerospace Systems Technical Group
+            </div>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          📸 View Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2024-1.jpg" alt="HFES 2024"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2024-1.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2024-2.jpg" alt="HFES 2024"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2024-2.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/hfes2024-3.jpg" alt="HFES 2024"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/hfes2024-3.jpg</div>'">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           ASB 2024
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2024 · Conference</div>
+          <div class="activity-title">American Society of Biomechanics — Annual Meeting 2024</div>
+          <div class="activity-location">📍 Madison, WI</div>
+          <div class="activity-body">
+            <p>Presented findings from a pilot study conducted to support the setup of our newly funded NASA project investigating the interactive effects of altered gravity and fatigue. The study involved 13 participants and helped identify potential challenges and necessary refinements to the experimental setup prior to the launch of the full-scale experiment, anticipated to begin in Fall 2024.</p>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          🗂 View Poster &amp; Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+
+          <!-- Poster -->
+          <div class="panel-label">Research Poster</div>
+          <div class="poster-wrap" onclick="openLightbox(this)">
+            <img src="images/ASB_poster.png" alt="ASB 2024 Poster"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+            <div style="display:none; padding:2rem; text-align:center; color:var(--text-muted); font-size:0.85rem;">
+              📄 Upload your poster as <code>images/ASB_poster.png</code> in your GitHub repo
+            </div>
+          </div>
+          <p class="poster-caption">Click the poster to view full size</p>
+
+          <!-- Photos -->
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/asb2024-1.jpg" alt="ASB 2024"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/asb2024-1.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/asb2024-2.jpg" alt="ASB 2024"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/asb2024-2.jpg</div>'">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           Joined UW-Madison
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2023 · Milestone</div>
+          <div class="activity-title">Joined UW–Madison</div>
+          <div class="activity-location">📍 Madison, Wisconsin</div>
+          <div class="activity-body">
+            <p>Following the successful completion of my M.S. in Mechanical Engineering at Clarkson University, I relocated to <a href="https://www.google.com/maps/place/Madison,+WI" target="_blank">Madison, Wisconsin</a> in January and joined the <a href="https://neuroergolab.org/" target="_blank">Neuroergonomics Lab</a> at the <a href="https://www.wisc.edu/" target="_blank">University of Wisconsin–Madison</a> as a Ph.D. student in the Department of Industrial and Systems Engineering.</p>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          📸 View Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/madison_1.jpg" alt="Madison Wisconsin"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/madison_1.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/madison_2.jpg" alt="Neuroergonomics Lab"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/madison_2.jpg</div>'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════
+           Graduated M.S.
+      ══════════════════════════════ -->
+      <div class="activity-card">
+        <div class="activity-card-top">
+          <div class="activity-year-badge">2022 · Milestone</div>
+          <div class="activity-title">Graduated M.S. — Clarkson University</div>
+          <div class="activity-location">📍 Potsdam, New York</div>
+          <div class="activity-body">
+            <p>For the past two years, I worked as a graduate researcher in the Astronautics and Robotics Laboratory <a href="https://www.astrolabresearch.com/" target="_blank">(ASTRO Lab)</a> under the supervision of <a href="https://www.clarkson.edu/people/michael-bazzocchi" target="_blank">Dr. Michael C. F. Bazzocchi</a>. During this period, I developed a comprehensive motion-capture dataset for firefighter activities and contributed to the design and development of an intelligent, adaptive firefighter exoskeleton. I successfully completed my degree in December.</p>
+          </div>
+        </div>
+
+        <button class="gallery-toggle" onclick="toggleGallery(this)">
+          📸 View Photos
+          <span class="toggle-icon">▼</span>
+        </button>
+        <div class="gallery-panel">
+          <div class="panel-label">Photos</div>
+          <div class="photo-grid">
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/clarkson.jpg" alt="Clarkson graduation"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/clarkson.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/clarkson_3.jpg" alt="Clarkson graduation"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/clarkson_3.jpg</div>'">
+            </div>
+            <div class="photo-item" onclick="openLightbox(this)">
+              <img src="images/clarkson_4.jpg" alt="Clarkson graduation"
+                onerror="this.parentElement.innerHTML='<div class=\'photo-placeholder\'><span>🖼</span>images/clarkson_4.jpg</div>'">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div><!-- .page -->
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function toggleGallery(btn) {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  }
+
+  function openLightbox(item) {
+    const img = item.querySelector('img');
+    if (!img || img.naturalWidth === 0) return;
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+</body>
+</html>

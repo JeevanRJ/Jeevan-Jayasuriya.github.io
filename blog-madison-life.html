@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Life Around Madison, WI — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-hero { background:linear-gradient(135deg,#1a3a2a,#2e7a50); height:240px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .post-wrap { max-width:720px; margin:0 auto; padding:3rem 2rem 5rem; }
+    .post-cat { font-size:0.68rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem; }
+    .post-title { font-family:'DM Serif Display',serif; font-size:2.2rem; color:var(--navy); line-height:1.2; margin-bottom:0.75rem; }
+    .post-meta { font-size:0.82rem; color:var(--text-muted); margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border); }
+    .post-body { font-size:0.97rem; color:var(--text-mid); line-height:1.95; }
+    .post-body p { margin-bottom:1.25rem; }
+    .post-body h2 { font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--navy); margin:2.5rem 0 0.75rem; }
+    .post-body ul { padding-left:1.25rem; margin-bottom:1.25rem; }
+    .post-body ul li { margin-bottom:0.4rem; }
+    .post-body strong { color:var(--text); }
+    .back-link { display:inline-flex; align-items:center; gap:6px; font-size:0.83rem; color:var(--text-mid); text-decoration:none; margin-bottom:2rem; transition:color 0.15s; }
+    .back-link:hover { color:var(--accent); }
+    .post-nav { display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); gap:1rem; flex-wrap:wrap; }
+    .post-nav a { font-size:0.83rem; color:var(--accent); text-decoration:none; }
+    .post-nav a:hover { text-decoration:underline; }
+    .spot-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:1.25rem 0; border-left:3px solid var(--accent); }
+    .spot-card h3 { font-size:1rem; font-weight:500; color:var(--navy); margin-bottom:0.4rem; }
+    .spot-card p { margin-bottom:0.65rem; }
+    .spot-card p:last-child { margin-bottom:0; }
+    .emoji-section { font-size:1.1rem; margin-right:4px; }
+
+    /* ── Photo styles ── */
+    .photo-wrap { margin:1.25rem 0 2rem; }
+    .photo-item {
+      border-radius:var(--radius); overflow:hidden;
+      cursor:pointer; border:1px solid var(--border);
+      background:var(--surface2);
+    }
+    .photo-item img {
+      width:100%; display:block;
+      max-height:380px; object-fit:cover;
+      transition:transform 0.3s;
+    }
+    .photo-item:hover img { transform:scale(1.02); }
+    .photo-caption {
+      font-size:0.76rem; color:var(--text-muted);
+      margin-top:0.45rem; font-style:italic; text-align:center;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display:none; position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,0.9);
+      align-items:center; justify-content:center;
+    }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:90vw; max-height:88vh; border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
+    .lb-close {
+      position:absolute; top:1.25rem; right:1.5rem;
+      background:none; border:none; color:#fff;
+      font-size:2rem; cursor:pointer; line-height:1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page" style="padding-top:0;">
+  <div class="post-hero">🌿</div>
+
+  <div class="post-wrap">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <div class="post-cat">PhD Life</div>
+    <h1 class="post-title">Life Around Madison, WI: Why I Love Living Here (and How It Shapes My PhD Life)</h1>
+    <div class="post-meta">2024 · 4 min read</div>
+
+    <div class="post-body">
+      <p>Living in Madison, Wisconsin has slowly changed the way I see everyday life. It's not just a city for me anymore — it feels like a balance between nature, water, quiet spaces, and focused work. Over time, it has also become the background of my PhD journey, shaping how I think, study, and reset.</p>
+      <p>There are a few special places I keep going back to again and again. Each one gives me a different kind of peace — and that balance has been important while doing PhD work.</p>
+
+      <!-- ══ PICNIC POINT ══ -->
+      <div class="spot-card">
+        <h3><span class="emoji-section">🌅</span> Picnic Point — My Walking Escape Between Research Thoughts</h3>
+        <p>One of my most peaceful spots is Picnic Point. It's a long, quiet stretch surrounded by water, trees, and open sky. I often go there when my PhD work feels heavy or when I get stuck thinking too much. Walking there helps me reset my mind.</p>
+        <p>Sometimes I think about research ideas while walking. Sometimes I don't think about anything at all. Both are equally important in a PhD life.</p>
+        <p>It reminds me that productivity is not only about sitting in front of a screen — it's also about stepping away.</p>
+      </div>
+
+      <!-- Photo: upload as images/blog/madison/picnic-point.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/madison/picnic-point.jpg')">
+          <img src="images/blog/madison/picnic-point.jpg" alt="Picnic Point, Madison"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Picnic Point — a quiet walk between research thoughts</p>
+      </div>
+
+      <!-- ══ MEMORIAL UNION ══ -->
+      <div class="spot-card">
+        <h3><span class="emoji-section">🌊</span> Memorial Union — Where Work Breaks Turn into Mental Rest</h3>
+        <p>Another place I enjoy is Memorial Union. It's more than a lakeside building — it's where I often take breaks from reading papers or writing. Sitting near the lake, watching people and boats, gives my mind space to breathe again.</p>
+        <p>PhD life can sometimes feel like continuous problem-solving. But places like this remind me that clarity often comes when I pause, not when I push harder.</p>
+        <p>Even a short visit here makes me feel mentally refreshed.</p>
+      </div>
+
+      <!-- Photo: upload as images/blog/madison/memorial-union.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/madison/memorial-union.jpg')">
+          <img src="images/blog/madison/memorial-union.jpg" alt="Memorial Union, Madison — misty lake view"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Memorial Union — that golden evening on Lake Mendota, where everything slowed down</p>
+      </div>
+
+      <!-- ══ RAYMER'S COVE ══ -->
+      <div class="spot-card">
+        <h3><span class="emoji-section">🌾</span> Raymer's Cove — Quiet Thinking Space for a Research Mind</h3>
+        <p>One of the most peaceful hidden spots for me is Raymer's Cove. It's quiet, less crowded, and perfect for slow walks. I often go there when I need to think deeply — about research problems, writing structure, or just life in general.</p>
+        <p>There is something about still water and open space that helps organize my thoughts better than sitting at a desk sometimes.</p>
+      </div>
+
+      <!-- Photo: upload as images/blog/madison/raymers-cove.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/madison/raymers-cove.jpg')">
+          <img src="images/blog/madison/raymers-cove.jpg" alt="Raymer's Cove, Madison"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Raymer's Cove — still water and open space for deep thinking</p>
+      </div>
+
+      <h2><span class="emoji-section">📚</span> PhD Life in Madison — A Balance Between Focus and Nature</h2>
+      <p>Doing a PhD is not only about research papers, coding, or experiments. It's also about managing your mind. For me, living in Madison makes that balance easier.</p>
+      <ul>
+        <li>Some days are focused and intense with research work</li>
+        <li>Some days need long walks to clear my mind</li>
+        <li>Some evenings end with lakeside views instead of screens</li>
+        <li>And some weekends become quiet recovery time in nature</li>
+      </ul>
+      <p>Places like Picnic Point, Memorial Union, and Raymer's Cove are not just locations — they are part of how I stay mentally steady during PhD life.</p>
+
+      <h2><span class="emoji-section">❤️</span> Why Madison Feels Special to Me</h2>
+      <p>Madison is not just where I live. It is where I learn, struggle, grow, and reset. The combination of academic life and natural surroundings has quietly shaped my PhD journey in a positive way.</p>
+      <p>Living here has taught me something simple: progress in research is important, but so is peace of mind. And in places like Picnic Point, Memorial Union, and Raymer's Cove, I often find both.</p>
+    </div>
+
+    <div class="post-nav">
+      <a href="blog-sri-lanka-to-usa.html">← From Sri Lanka to the USA</a>
+      <a href="blog-devils-lake.html">Devils Lake →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+</body>
+</html>

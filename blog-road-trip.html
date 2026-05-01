@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Great Lakes Road Trip — Jeevan Jayasuriya</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .post-hero { background:linear-gradient(135deg,#2a1a35,#6a3a70); height:240px; display:flex; align-items:center; justify-content:center; font-size:5rem; }
+    .post-wrap { max-width:720px; margin:0 auto; padding:3rem 2rem 5rem; }
+    .post-cat { font-size:0.68rem; font-weight:500; letter-spacing:2px; text-transform:uppercase; color:#7a3a70; margin-bottom:0.75rem; }
+    .post-title { font-family:'DM Serif Display',serif; font-size:2.2rem; color:var(--navy); line-height:1.2; margin-bottom:0.75rem; }
+    .post-meta { font-size:0.82rem; color:var(--text-muted); margin-bottom:2.5rem; padding-bottom:1.5rem; border-bottom:1px solid var(--border); }
+    .post-body { font-size:0.97rem; color:var(--text-mid); line-height:1.95; }
+    .post-body p { margin-bottom:1.25rem; }
+    .post-body h2 { font-family:'DM Serif Display',serif; font-size:1.4rem; color:var(--navy); margin:2.5rem 0 0.75rem; }
+    .post-body ul { padding-left:1.25rem; margin-bottom:1.25rem; }
+    .post-body ul li { margin-bottom:0.4rem; }
+    .post-body strong { color:var(--text); }
+    .back-link { display:inline-flex; align-items:center; gap:6px; font-size:0.83rem; color:var(--text-mid); text-decoration:none; margin-bottom:2rem; transition:color 0.15s; }
+    .back-link:hover { color:var(--accent); }
+    .post-nav { display:flex; justify-content:space-between; margin-top:3rem; padding-top:1.5rem; border-top:1px solid var(--border); gap:1rem; flex-wrap:wrap; }
+    .post-nav a { font-size:0.83rem; color:var(--accent); text-decoration:none; }
+    .post-nav a:hover { text-decoration:underline; }
+    .stop-card { background:var(--white); border:1px solid var(--border); border-radius:var(--radius); padding:1.5rem; margin:1.25rem 0; display:grid; grid-template-columns:48px 1fr; gap:1rem; align-items:start; transition:box-shadow 0.2s; }
+    .stop-card:hover { box-shadow:0 6px 20px rgba(15,27,53,0.08); }
+    .stop-num { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--navy-mid)); color:#fff; display:flex; align-items:center; justify-content:center; font-size:0.85rem; font-weight:500; flex-shrink:0; }
+    .stop-location { font-size:0.68rem; font-weight:500; letter-spacing:1.5px; text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem; }
+    .stop-title { font-size:1rem; font-weight:500; color:var(--navy); margin-bottom:0.5rem; }
+    .stop-desc { font-size:0.88rem; color:var(--text-mid); line-height:1.75; }
+    .emoji-section { font-size:1.1rem; margin-right:4px; }
+
+    /* ── Photo styles ── */
+    .photo-wrap { margin:0.75rem 0 1.75rem; }
+    .photo-item {
+      border-radius:var(--radius); overflow:hidden;
+      cursor:pointer; border:1px solid var(--border);
+      background:var(--surface2);
+    }
+    .photo-item img {
+      width:100%; display:block;
+      max-height:380px; object-fit:cover;
+      transition:transform 0.3s;
+    }
+    .photo-item:hover img { transform:scale(1.02); }
+    .photo-caption {
+      font-size:0.76rem; color:var(--text-muted);
+      margin-top:0.45rem; font-style:italic; text-align:center;
+    }
+
+    /* ── Lightbox ── */
+    .lightbox {
+      display:none; position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,0.9);
+      align-items:center; justify-content:center;
+    }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width:90vw; max-height:88vh; border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,0.5); }
+    .lb-close {
+      position:absolute; top:1.25rem; right:1.5rem;
+      background:none; border:none; color:#fff;
+      font-size:2rem; cursor:pointer; line-height:1;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">✕</button>
+  <img id="lb-img" src="" alt="">
+</div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Jeevan Jayasuriya</a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="publications.html">Publications</a>
+    <a href="teaching.html">Teaching</a>
+    <a href="activities.html">Activities</a>
+    <a href="blog.html">Blog</a>
+    <a href="cv.html">CV</a>
+  </div>
+  <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page" style="padding-top:0;">
+  <div class="post-hero">🚗</div>
+
+  <div class="post-wrap">
+    <a href="blog.html" class="back-link">← Back to Blog</a>
+    <div class="post-cat">Travel</div>
+    <h1 class="post-title">A Summer Road Trip with Friends Through the Great Lakes Region</h1>
+    <div class="post-meta">2025 · 5 min read</div>
+
+    <div class="post-body">
+      <p>Last summer, we set out on a road trip with our friends, chasing lakes, forests, cliffs, and small coastal towns across the Upper Midwest. It turned into one of those trips where every stop felt different, but all of them shared the same peaceful, natural beauty.</p>
+      <p>We explored parts of Michigan and Minnesota, covering long scenic drives, quiet hikes, and unforgettable lake views.</p>
+
+      <h2>Our Stops</h2>
+
+      <!-- ══ STOP 01 — Sleeping Bear Dunes ══ -->
+      <div class="stop-card">
+        <div class="stop-num">01</div>
+        <div>
+          <div class="stop-location">🏜️ Michigan</div>
+          <div class="stop-title">Sleeping Bear Dunes National Lakeshore</div>
+          <div class="stop-desc">Our journey began where massive sand dunes meet the deep blue waters of Lake Michigan. Climbing the dunes was both fun and exhausting — every step forward felt like sliding half a step back. But when we finally reached the top, the view made everything worth it. Endless shoreline, soft wind, and a calm horizon made it feel almost unreal. We stayed longer than planned, just sitting on the sand.</div>
+        </div>
+      </div>
+      <!-- Photo: upload as images/blog/road-trip/sleeping-bear.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/road-trip/sleeping-bear.jpeg')">
+          <img src="images/blog/road-trip/sleeping-bear.jpeg" alt="Sleeping Bear Dunes National Lakeshore"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Sleeping Bear Dunes — the view from the top made every step worth it</p>
+      </div>
+
+      <!-- ══ STOP 02 — Pictured Rocks ══ -->
+      <div class="stop-card">
+        <div class="stop-num">02</div>
+        <div>
+          <div class="stop-location">🌊 Upper Peninsula, Michigan</div>
+          <div class="stop-title">Pictured Rocks National Lakeshore</div>
+          <div class="stop-desc">One of the most beautiful places on the trip — colorful cliffs rising above Lake Superior. Shades of red, orange, and green blended into the rock walls, shaped by wind and water over time. We took a boat tour along the shoreline, which gave us a completely different view. From the water, everything looked even more dramatic and powerful.</div>
+        </div>
+      </div>
+      <!-- Photo: upload as images/blog/road-trip/pictured-rocks.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/road-trip/pictured-rocks.jpeg')">
+          <img src="images/blog/road-trip/pictured-rocks.jpeg" alt="Pictured Rocks National Lakeshore"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Pictured Rocks — colorful cliffs rising above Lake Superior</p>
+      </div>
+
+      <!-- ══ STOP 03 — Upper Peninsula Drive ══ -->
+      <div class="stop-card">
+        <div class="stop-num">03</div>
+        <div>
+          <div class="stop-location">🌲 Upper Peninsula, Michigan</div>
+          <div class="stop-title">Driving the Upper Peninsula</div>
+          <div class="stop-desc">Driving through the Upper Peninsula itself was an experience on its own. Long roads, dense forests, and very few crowds made it feel peaceful and remote. We stopped at small roadside viewpoints, ate simple snacks in the car, and enjoyed the feeling of being far away from busy city life. The quietness of the region was something we all appreciated deeply.</div>
+        </div>
+      </div>
+      <!-- Photo: upload as images/blog/road-trip/upper-peninsula.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/road-trip/upper-peninsula.jpeg')">
+          <img src="images/blog/road-trip/upper-peninsula.jpeg" alt="Driving the Upper Peninsula"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Upper Peninsula — long roads, dense forests, and peaceful silence</p>
+      </div>
+
+      <!-- ══ STOP 04 — Tettegouche ══ -->
+      <div class="stop-card">
+        <div class="stop-num">04</div>
+        <div>
+          <div class="stop-location">💦 Minnesota</div>
+          <div class="stop-title">Tettegouche State Park</div>
+          <div class="stop-desc">Crossing into Minnesota, we found a place filled with waterfalls, rocky trails, and views of Lake Superior. We hiked to waterfalls surrounded by tall trees and rocky cliffs. The sound of rushing water mixed with the wind created a calming atmosphere. A great place to slow down after long hours of driving.</div>
+        </div>
+      </div>
+      <!-- Photo: upload as images/blog/road-trip/tettegouche.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/road-trip/tettegouche.jpeg')">
+          <img src="images/blog/road-trip/tettegouche.jpeg" alt="Tettegouche State Park Minnesota"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Tettegouche State Park — waterfalls, rocky trails, and Lake Superior views</p>
+      </div>
+
+      <!-- ══ STOP 05 — Fishtown ══ -->
+      <div class="stop-card">
+        <div class="stop-num">05</div>
+        <div>
+          <div class="stop-location">🐟 Leland, Michigan</div>
+          <div class="stop-title">Fishtown in Leland</div>
+          <div class="stop-desc">On our way back, we stopped at this small historic fishing village that felt like stepping into another time. Old shanties, wooden docks, and small shops made the area very charming. We walked around, watched fishing boats, and enjoyed fresh local snacks by the water. Simple but one of the most memorable stops because of its peaceful and authentic atmosphere.</div>
+        </div>
+      </div>
+      <!-- Photo: upload as images/blog/road-trip/fishtown.jpg -->
+      <div class="photo-wrap">
+        <div class="photo-item" onclick="openLb('images/blog/road-trip/fishtown.jpeg')">
+          <img src="images/blog/road-trip/fishtown.jpeg" alt="Fishtown Leland Michigan"
+            onerror="this.parentElement.parentElement.style.display='none'">
+        </div>
+        <p class="photo-caption">Fishtown, Leland — old shanties, wooden docks, and a step back in time</p>
+      </div>
+
+      <!-- ══ FINAL THOUGHTS ══ -->
+      <h2><span class="emoji-section">🚗</span> Final Thoughts</h2>
+      <p>This road trip wasn't just about the destinations — it was about the journey between them. Long drives, shared laughter with friends, spontaneous stops, and quiet moments by the lakes all made it special.</p>
+      <p>The Great Lakes region has a way of slowing everything down. Every place we visited felt natural, calm, and refreshing. If you ever get the chance to road trip through this part of the country, don't overthink it — just go.</p>
+    </div>
+
+    <div class="post-nav">
+      <a href="blog-niagara.html">← Niagara Falls</a>
+      <a href="blog.html">All Posts →</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Jeevan Jayasuriya · PhD Researcher, University of Wisconsin–Madison</p>
+  <div class="footer-links">
+    <a href="mailto:jayasuriyaar@wisc.edu">Email</a>
+    <a href="https://github.com/JeevanRJ" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/jeevanjayasuriya" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=gYFDPv8AAAAJ&hl=en" target="_blank">Google Scholar</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  function openLb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLb() {
+    document.getElementById('lightbox').classList.remove('open');
+  }
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLb();
+  });
+</script>
+</body>
+</html>
