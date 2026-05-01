@@ -1,0 +1,193 @@
+/* ============================================
+   JEEVAN JAYASURIYA — PERSONAL ACADEMIC SITE
+   style.css — Shared styles for all pages
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* ── TOKENS ── */
+:root {
+  --navy:        #0f1b35;
+  --navy-mid:    #1e3157;
+  --navy-light:  #2a4170;
+  --accent:      #2563a8;
+  --accent-lt:   #3b82c4;
+  --gold:        #c8922a;
+  --gold-lt:     #e5b84a;
+  --surface:     #f7f8fb;
+  --surface2:    #eef0f6;
+  --border:      #dde1ec;
+  --text:        #1a2035;
+  --text-mid:    #4a5370;
+  --text-muted:  #7a829a;
+  --white:       #ffffff;
+  --radius:      12px;
+  --radius-sm:   8px;
+  --nav-h:       64px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  font-size: 16px;
+  min-height: 100vh;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  height: var(--nav-h);
+  background: rgba(255,255,255,0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem;
+}
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.15rem; color: var(--navy);
+  text-decoration: none; letter-spacing: -0.3px;
+  white-space: nowrap;
+}
+.nav-links { display: flex; gap: 2px; }
+.nav-links a {
+  font-size: 0.84rem; font-weight: 400; color: var(--text-mid);
+  text-decoration: none; padding: 7px 13px; border-radius: 7px;
+  transition: color 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+.nav-links a:hover { color: var(--accent); background: #e8f0fa; }
+.nav-links a.active {
+  color: var(--accent); background: #e8f0fa; font-weight: 500;
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; padding: 6px; background: none; border: none;
+}
+.nav-toggle span {
+  display: block; width: 22px; height: 2px;
+  background: var(--navy); border-radius: 2px; transition: all 0.2s;
+}
+
+/* ── PAGE WRAPPER ── */
+.page {
+  padding-top: var(--nav-h);
+  min-height: 100vh;
+  animation: fadeIn 0.45s ease both;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── CONTAINER ── */
+.container { max-width: 960px; margin: 0 auto; padding: 0 2rem; }
+.container-sm { max-width: 720px; margin: 0 auto; padding: 0 2rem; }
+
+/* ── SECTION ── */
+.section { padding: 4.5rem 0; }
+.section-alt { background: var(--surface); }
+
+.section-label {
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 2.5px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 0.4rem;
+}
+.section-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem; color: var(--navy);
+  line-height: 1.2; margin-bottom: 2.5rem;
+}
+.section-title span { color: var(--accent); }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 500;
+  padding: 10px 20px; border-radius: var(--radius-sm);
+  text-decoration: none; transition: all 0.18s; cursor: pointer;
+  border: none; font-family: inherit;
+}
+.btn-primary { background: var(--gold); color: var(--navy); }
+.btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); box-shadow: 0 6px 16px rgba(200,146,42,0.3); }
+
+.btn-dark { background: var(--navy); color: var(--white); }
+.btn-dark:hover { background: var(--navy-mid); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent; color: var(--navy);
+  border: 1px solid var(--border);
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); background: #f0f5fb; }
+
+.btn-ghost-white {
+  background: transparent; color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-ghost-white:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+.btn-sm { font-size: 0.78rem; padding: 6px 13px; border-radius: 6px; gap: 5px; }
+.btn-tag {
+  font-size: 0.78rem; padding: 5px 12px; border-radius: 20px;
+  background: var(--surface2); color: var(--text-mid);
+  border: 1px solid var(--border); text-decoration: none;
+  transition: all 0.15s; font-weight: 400;
+}
+.btn-tag:hover { border-color: var(--accent); color: var(--accent); background: #eef4fc; }
+
+/* ── CARDS ── */
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 1.5rem;
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.card:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(15,27,53,0.09); }
+.card-accent::before {
+  content: ''; display: block; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold));
+  margin: -1.5rem -1.5rem 1.2rem; border-radius: var(--radius) var(--radius) 0 0;
+}
+
+/* ── BADGES ── */
+.badge {
+  font-size: 0.7rem; font-weight: 500; letter-spacing: 0.5px;
+  padding: 3px 10px; border-radius: 20px; display: inline-block;
+}
+.badge-blue { background: #ddeeff; color: #1a5a9a; border: 1px solid #b8d4f0; }
+.badge-gold { background: #fef3e2; color: #8a5c10; border: 1px solid #f0d49a; }
+.badge-green { background: #e6f5ec; color: #1a6e3a; border: 1px solid #b0dcc0; }
+.badge-gray { background: var(--surface2); color: var(--text-muted); border: 1px solid var(--border); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy); color: rgba(255,255,255,0.5);
+  padding: 2.5rem; text-align: center; font-size: 0.82rem;
+}
+footer a { color: rgba(255,255,255,0.7); text-decoration: none; }
+footer a:hover { color: var(--white); }
+.footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-top: 0.75rem; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 1.25rem; }
+  .nav-links {
+    display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
+    background: var(--white); border-bottom: 1px solid var(--border);
+    flex-direction: column; padding: 1rem; gap: 4px;
+  }
+  .nav-links.open { display: flex; }
+  .nav-toggle { display: flex; }
+  .container { padding: 0 1.25rem; }
+  .section { padding: 3rem 0; }
+  .section-title { font-size: 1.6rem; }
+}
+
